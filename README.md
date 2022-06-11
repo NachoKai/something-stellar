@@ -1,4 +1,8 @@
-# Create React App
+# Stellar Simple Wallet
+
+Create an account, send transactions, and check third-party balances.
+
+## Create React App
 
 This directory is a brief example of a [Create React App](https://github.com/facebook/create-react-app) site that can be deployed to Vercel with zero configuration.
 
@@ -29,3 +33,19 @@ Launches the test runner in the interactive watch mode. See the section about [r
 Builds the app for production to the `build` folder.
 
 It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+
+## Feedback
+
+If you have any feedback, please reach out to me at ignacio.caiafa@gmail.com
+
+## Contributing
+
+Contributions are always welcome! [Project Kanban Board](https://github.com/NachoKai/forito/projects/1) 
+## Authors
+
+- [@NachoKai](https://www.github.com/NachoKai)
+
+
+## 🚀 About Me
+
+Hi, I'm Nacho! 👋 I'm a software developer from Argentina 🇦🇷
