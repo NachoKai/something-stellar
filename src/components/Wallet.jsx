@@ -1,6 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Box, Button, Stack, Divider } from '@chakra-ui/core'
+import {
+	Box,
+	Button,
+	Stack,
+	Divider,
+	useDisclosure,
+	Modal,
+	ModalOverlay,
+	ModalContent,
+	ModalHeader,
+	ModalCloseButton,
+	ModalBody,
+	ModalFooter,
+} from '@chakra-ui/core'
 import styled from 'styled-components'
 
 import AccountData from './AccountData'
@@ -13,6 +26,7 @@ import Info from './Info'
 const Wallet = ({ publicKey, secret, resetAccount }) => {
 	const [account, setAccount] = useState(undefined)
 	const [operations, setOperations] = useState(undefined)
+	const { isOpen, onOpen, onClose } = useDisclosure()
 
 	const updateAccount = () => {
 		const getData = async () => {
@@ -37,6 +51,24 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 
 	return (
 		<Wrapper>
+			<Modal isOpen={isOpen} onClose={onClose}>
+				<ModalOverlay />
+				<ModalContent>
+					<ModalHeader>Are you sure you want to close your account?</ModalHeader>
+					<ModalCloseButton />
+					<ModalBody>
+            Your account data will be removed from your browser, so if you haven&apos;t saved
+            your secret key, you will have lost it forever.
+					</ModalBody>
+					<ModalFooter>
+						<Button variantColor="red" mr={3} onClick={resetAccount}>
+              Yes
+						</Button>
+						<Button variantColor="gray" onClick={onClose}>No</Button>
+					</ModalFooter>
+				</ModalContent>
+			</Modal>
+
 			<Box display="flex" justifyContent="center" width="100%" orderWidth="2px" p={8}>
 				<Stack width="100%" justifyContent="center">
 					<AccountData account={account} publicKey={publicKey} />
@@ -54,7 +86,7 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 			<Info operations={operations} />
 
 			<Stack direction="row" justifyContent="flex-end" alignItems="center" p={6}>
-				<Button onClick={resetAccount} variant="outline" variantColor="red">
+				<Button onClick={onOpen} variant="outline" variantColor="red">
           Close
 				</Button>
 			</Stack>
