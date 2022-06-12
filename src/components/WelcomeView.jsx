@@ -65,7 +65,13 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
         Welcome to your <GradientText>Stellar Wallet</GradientText>
 			</Heading>
 			<Text fontSize="xl">Create your stellar account quickly and easily</Text>
-			<Button onClick={handleCreateAccount} size="lg" variantColor="blue" mt="24px">
+			<Button
+				onClick={handleCreateAccount}
+				size="lg"
+				variantColor="blue"
+				mt="24px"
+				boxShadow="0 10px 15px -3px skyblue,0 4px 6px -4px blue;"
+			>
         Create Account
 			</Button>
 

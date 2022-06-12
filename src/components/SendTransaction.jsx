@@ -70,9 +70,15 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 	return (
 		<>
 			<GradientText>
-				<Stack direction="row" alignItems="center" spacing="2" mt={6} justifyContent="space-between">
+				<Stack
+					direction="row"
+					alignItems="center"
+					spacing="2"
+					mt={6}
+					justifyContent="space-between"
+				>
 					<Text fontSize="xl" fontWeight={600}>
-          Send XLM
+            Send XLM
 					</Text>
 					<GrSend size={18} />
 				</Stack>
@@ -100,7 +106,12 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 					isInvalid={destination.length !== 56 && destination.length > 0}
 				/>
 			</InputGroup>
-			<Button mt={6} onClick={sendXLM} variantColor="blue">
+			<Button
+				mt={6}
+				onClick={sendXLM}
+				variantColor="blue"
+				boxShadow="0 10px 15px -3px skyblue,0 4px 6px -4px blue;"
+			>
         Send
 			</Button>
 		</>
