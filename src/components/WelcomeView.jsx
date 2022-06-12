@@ -10,7 +10,7 @@ import {
 	useToast,
 	Divider,
 	Stack,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 import createAccount from '../utils/createAccount'
 import GradientText from './common/GradientText'
@@ -59,22 +59,22 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 	}
 
 	return (
-		<Stack justifyContent="center" maxWidth="48rem" width="100%">
+		<Stack justify="center" maxW="48rem" w="100%">
 			<Heading>
         Welcome to your <GradientText>Stellar Wallet</GradientText>
 			</Heading>
 			<Text fontSize="xl">Create your stellar account quickly and easily</Text>
 			<Button
 				boxShadow="0 10px 15px -3px skyblue,0 4px 6px -4px blue;"
+				colorScheme="blue"
 				mt="24px"
 				size="lg"
-				variantColor="blue"
 				onClick={handleCreateAccount}
 			>
         Create Account
 			</Button>
 
-			<Divider borderColor="lightgrey" borderWidth="1px" my={8} />
+			<Divider p={4} />
 
 			<Text mt={8}>Or import an account with your secret key:</Text>
 			<InputGroup>
@@ -82,11 +82,10 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 					isInvalid={secretToImport.length !== 56 && secretToImport.length > 0}
 					mr={2}
 					placeholder="Account to check"
-					roundRight="0"
 					value={secretToImport}
 					onChange={({ target: { value } }) => setSecretToImport(value)}
 				/>
-				<Button variantColor="green" onClick={importAccount}>
+				<Button colorScheme="green" onClick={importAccount}>
           Import
 				</Button>
 			</InputGroup>

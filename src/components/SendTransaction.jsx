@@ -9,11 +9,10 @@ import {
 	NumberDecrementStepper,
 	InputGroup,
 	Input,
-	InputLeftAddon,
 	Button,
 	useToast,
 	Stack,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import { GrSend } from 'react-icons/gr'
 
 import sendTransaction from '../utils/sendTransaction'
@@ -38,7 +37,7 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 
 				toast({
 					title: `${amount} XLM have been sent`,
-					description: `Transaction hash: ${result.hash}`,
+					description: `Transaction hash: ${result?.hash}`,
 					status: 'success',
 					isClosable: true,
 				})
@@ -70,9 +69,9 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 		<>
 			<GradientText>
 				<Stack
-					alignItems="center"
+					align="center"
 					direction="row"
-					justifyContent="space-between"
+					justify="space-between"
 					mt={6}
 					spacing="2"
 				>
@@ -89,26 +88,25 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 				value={amount}
 				onChange={value => setAmount(value)}
 			>
-				<InputLeftAddon>XLM</InputLeftAddon>
-				<NumberInputField placeholder="0.000" roundLeft="0" />
+				<NumberInputField placeholder="0.000" />
 				<NumberInputStepper>
 					<NumberIncrementStepper />
 					<NumberDecrementStepper />
 				</NumberInputStepper>
 			</NumberInput>
+
 			<InputGroup mt={6}>
 				<Input
 					isInvalid={destination.length !== 56 && destination.length > 0}
 					placeholder="Recipient"
-					roundRight="0"
 					value={destination}
 					onChange={({ target: { value } }) => setDestination(value)}
 				/>
 			</InputGroup>
 			<Button
 				boxShadow="0 10px 15px -3px skyblue,0 4px 6px -4px blue;"
+				colorScheme="blue"
 				mt={6}
-				variantColor="blue"
 				onClick={sendXLM}
 			>
         Send

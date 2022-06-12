@@ -4,7 +4,6 @@ import {
 	Box,
 	Button,
 	Stack,
-	Divider,
 	useDisclosure,
 	Modal,
 	ModalOverlay,
@@ -13,7 +12,8 @@ import {
 	ModalCloseButton,
 	ModalBody,
 	ModalFooter,
-} from '@chakra-ui/core'
+	Divider,
+} from '@chakra-ui/react'
 import styled from 'styled-components'
 
 import AccountData from './AccountData'
@@ -63,22 +63,22 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
             saved your secret key, you will have lost it forever.
 					</ModalBody>
 					<ModalFooter>
-						<Button mr={3} variantColor="red" onClick={resetAccount}>
+						<Button colorScheme="red" mr={3} onClick={resetAccount}>
               Yes
 						</Button>
-						<Button variantColor="gray" onClick={onClose}>
+						<Button colorScheme="gray" onClick={onClose}>
               No
 						</Button>
 					</ModalFooter>
 				</ModalContent>
 			</Modal>
 
-			<Box display="flex" justifyContent="center" orderWidth="2px" p={8} width="100%">
-				<Stack justifyContent="center" width="100%">
+			<Box display="flex" justifyContent="center" p={8} w="100%">
+				<Stack justify="center" w="100%">
 					<AccountData account={account} publicKey={publicKey} />
-					<Divider borderColor="lightgrey" borderWidth="1px" my={8} />
+					<Divider />
 					<BalanceChecker />
-					<Divider borderColor="lightgrey" borderWidth="1px" my={8} />
+					<Divider />
 					<SendTransaction
 						secret={secret}
 						updateAccount={updateAccount}
@@ -89,8 +89,8 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 
 			<Info operations={operations} />
 
-			<Stack alignItems="center" direction="row" justifyContent="flex-end" p={6}>
-				<Button variant="outline" variantColor="red" onClick={onOpen}>
+			<Stack align="center" direction="row" justify="flex-end" p={6}>
+				<Button colorScheme="red" variant="outline" onClick={onOpen}>
           Close
 				</Button>
 			</Stack>

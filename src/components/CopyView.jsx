@@ -11,7 +11,7 @@ import {
 	Text,
 	useClipboard,
 	useToast,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
@@ -45,7 +45,7 @@ const CopyView = ({ publicKey, secret, setKeyCopied, resetAccount }) => {
 	return (
 		<Wrapper>
 			<Box p={8}>
-				<Stack justifyContent="center">
+				<Stack justify="center">
 					<Alert status="warning">
 						<AlertIcon />
 						<Text>
@@ -55,7 +55,7 @@ const CopyView = ({ publicKey, secret, setKeyCopied, resetAccount }) => {
 					</Alert>
 					<InputGroup>
 						<Input readOnly pr="4.5rem" value={secret} />
-						<InputRightElement width="4.5rem">
+						<InputRightElement w="4.5rem">
 							<Button h="1.75rem" size="sm" onClick={onCopy}>
 								{hasCopied ? 'Copied' : 'Copy'}
 							</Button>
@@ -63,7 +63,7 @@ const CopyView = ({ publicKey, secret, setKeyCopied, resetAccount }) => {
 					</InputGroup>
 					<Box display="flex" justifyContent="space-between">
 						<Button onClick={resetAccount}>Back</Button>
-						<Button disabled={!hasCopied} variantColor="blue" onClick={handleCopied}>
+						<Button colorScheme="blue" disabled={!hasCopied} onClick={handleCopied}>
               Continue
 						</Button>
 					</Box>

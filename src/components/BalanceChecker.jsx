@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Input, InputGroup, Text, useToast, Stack } from '@chakra-ui/core'
+import { Button, Input, InputGroup, Text, useToast, Stack } from '@chakra-ui/react'
 import { AiOutlineKey } from 'react-icons/ai'
 
 import loadAccount from '../utils/loadAccount'
@@ -29,30 +29,22 @@ const BalanceChecker = () => {
 	return (
 		<>
 			<GradientText>
-				<Stack
-					alignItems="center"
-					direction="row"
-					justifyContent="space-between"
-					mt={8}
-					spacing="2"
-				>
+				<Stack align="center" direction="row" justify="space-between" mt={8} spacing="2">
 					<Text fontSize="xl" fontWeight={600}>
             Balance Checker
 					</Text>
 					<AiOutlineKey size={20} />
 				</Stack>
 			</GradientText>
-
 			<InputGroup mt={6}>
 				<Input
 					isInvalid={accountToCheck.length !== 56 && accountToCheck.length > 0}
 					mr={2}
 					placeholder="Account to check"
-					roundRight="0"
 					value={accountToCheck}
 					onChange={({ target: { value } }) => setAccountToCheck(value)}
 				/>
-				<Button variantColor="green" onClick={checkBalance}>
+				<Button colorScheme="green" onClick={checkBalance}>
           Check
 				</Button>
 			</InputGroup>

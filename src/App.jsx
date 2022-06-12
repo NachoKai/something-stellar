@@ -1,25 +1,25 @@
 import React from 'react'
-import { Box, ThemeProvider, CSSReset, Image } from '@chakra-ui/core'
+import { Box, ChakraProvider, CSSReset, Image } from '@chakra-ui/react'
 
 import SaturnSVG from './assets/saturn.svg'
 import Main from './components/Main'
 
 function App() {
 	return (
-		<ThemeProvider>
+		<ChakraProvider>
 			<CSSReset />
 			<Box
 				alignItems="center"
 				display="flex"
 				flexDirection="column"
 				justifyContent="center"
-				mt={4}
 				p={2}
+				pt={6}
 			>
-				<Image alt="Saturn" mb={8} objectFit="cover" size="10vw" src={SaturnSVG} />
+				<Image alt="Saturn" boxSize="10vw" mb={8} objectFit="cover" src={SaturnSVG} />
 				<Main />
 			</Box>
-		</ThemeProvider>
+		</ChakraProvider>
 	)
 }
 

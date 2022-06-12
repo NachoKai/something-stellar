@@ -5,10 +5,10 @@ import {
 	Text,
 	Accordion,
 	AccordionItem,
-	AccordionHeader,
+	AccordionButton,
 	AccordionPanel,
 	AccordionIcon,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import { VscBook } from 'react-icons/vsc'
 import PropTypes from 'prop-types'
 
@@ -17,18 +17,18 @@ import GradientText from './common/GradientText'
 
 const Info = ({ operations }) => {
 	return (
-		<Box display="flex" width="100%">
-			<Stack width="100%">
+		<Box display="flex" w="100%">
+			<Stack w="100%">
 				<Accordion allowToggle>
 					<AccordionItem>
-						<AccordionHeader justifyContent="space-between">
+						<AccordionButton justify="space-between">
 							<GradientText>
 								<Stack
-									alignItems="center"
+									align="center"
 									direction="row"
-									justifyContent="space-between"
+									justify="space-between"
 									spacing="2"
-									width="100%"
+									w="100%"
 								>
 									<Text fontSize="md" fontWeight={600}>
                     Operations
@@ -37,7 +37,7 @@ const Info = ({ operations }) => {
 								</Stack>
 							</GradientText>
 							<AccordionIcon />
-						</AccordionHeader>
+						</AccordionButton>
 						<AccordionPanel pb={4}>
 							<Operations operations={operations} />
 						</AccordionPanel>

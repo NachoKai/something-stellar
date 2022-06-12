@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Box, Badge, Stack, Tooltip } from '@chakra-ui/core'
+import { Text, Box, Badge, Stack, Tooltip } from '@chakra-ui/react'
 import { format, isValid, formatDistance } from 'date-fns'
 import { startCase } from 'lodash'
 import { MdSend } from 'react-icons/md'
@@ -16,8 +16,8 @@ const Operation = ({ operation, index }) => {
 			my={3}
 			p={4}
 		>
-			<Stack alignItems="center" direction="row" justifyContent="space-between" mb={2}>
-				<Stack alignItems="center" direction="row" spacing={1}>
+			<Stack align="center" direction="row" justify="space-between" mb={2}>
+				<Stack align="center" direction="row" spacing={1}>
 					<Text color="green.600" fontSize="xl">
 						{operation?.amount ? <b>{Number(operation.amount).toFixed(2)}</b> : null}
 					</Text>
@@ -51,17 +51,17 @@ const Operation = ({ operation, index }) => {
 			) : null}
 			{operation?.to ? <SectionText title="To:" value={operation.to} /> : null}
 
-			<Stack alignItems="center" direction="row" justifyContent="space-between" mt={2}>
-				<Stack alignItems="center" direction="row" spacing={1}>
+			<Stack align="center" direction="row" justify="space-between" mt={2}>
+				<Stack align="center" direction="row" spacing={1}>
 					<MdSend />
 					<Text fontSize="sm" ml={1}>
 						<b>{startCase(operation.type)}</b>
 					</Text>
 				</Stack>
 				{operation?.transaction_successful ? (
-					<Badge variantColor="green">Successful</Badge>
+					<Badge colorScheme="green">Successful</Badge>
 				) : (
-					<Badge variantColor="red">Not Successful</Badge>
+					<Badge colorScheme="red">Not Successful</Badge>
 				)}
 			</Stack>
 		</Box>
@@ -77,7 +77,7 @@ const SectionText = ({ title, value }) => {
 			<Text
 				color="grey"
 				fontSize="sm"
-				maxWidth="95%"
+				maxW="95%"
 				overflow="hidden"
 				textOverflow="ellipsis"
 			>

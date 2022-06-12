@@ -7,7 +7,8 @@ import {
 	Text,
 	useClipboard,
 	Stack,
-} from '@chakra-ui/core'
+	Divider,
+} from '@chakra-ui/react'
 import { formatDistance } from 'date-fns'
 import { BsWallet2 } from 'react-icons/bs'
 import { GrKey } from 'react-icons/gr'
@@ -22,13 +23,7 @@ const AccountData = ({ publicKey, account }) => {
 	return (
 		<>
 			<GradientText>
-				<Stack
-					alignItems="center"
-					direction="row"
-					justifyContent="space-between"
-					mb={3}
-					spacing="2"
-				>
+				<Stack align="center" direction="row" justify="space-between" mb={3} spacing="2">
 					<Text fontSize="xl" fontWeight={600}>
             Public Key
 					</Text>
@@ -38,18 +33,20 @@ const AccountData = ({ publicKey, account }) => {
 
 			<InputGroup>
 				<Input readOnly placeholder="Public Key" pr="4.5rem" value={publicKey} />
-				<InputRightElement width="4.5rem">
+				<InputRightElement w="4.5rem">
 					<Button h="1.75rem" size="sm" onClick={onCopy}>
 						{hasCopied ? 'Copied' : 'Copy'}
 					</Button>
 				</InputRightElement>
 			</InputGroup>
 
+			<Divider />
+
 			<GradientText>
 				<Stack
-					alignItems="center"
+					align="center"
 					direction="row"
-					justifyContent="space-between"
+					justify="space-between"
 					mb={3}
 					mt={6}
 					spacing="2"

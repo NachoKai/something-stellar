@@ -5,7 +5,7 @@ import {
 	Input,
 	InputRightAddon,
 	Tooltip,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import { startCase } from 'lodash'
 import PropTypes from 'prop-types'
 
@@ -13,7 +13,7 @@ const AccountBalance = ({ balance, index }) => {
 	return (
 		<InputGroup mt={6}>
 			<InputLeftAddon>{index}</InputLeftAddon>
-			<Input readOnly roundRight="0" roundedLeft="0" value={balance?.balance} />
+			<Input readOnly value={balance?.balance} />
 			<InputRightAddon>XLM</InputRightAddon>
 			<InputRightAddon>
 				<Tooltip label="Asset Type" placement="top">
