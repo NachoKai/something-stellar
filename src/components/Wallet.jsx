@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Box, Button, Stack, Text, Divider } from '@chakra-ui/core'
+import styled from 'styled-components'
 
 import AccountData from './AccountData'
 import SendTransaction from './SendTransaction'
@@ -35,19 +36,9 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 	useEffect(updateOperations, [publicKey])
 
 	return (
-		<>
-			<Box
-				display="flex"
-				justifyContent="center"
-				width="100%"
-				maxWidth="48rem"
-				orderWidth="2px"
-				borderWidth="2px"
-				borderColor="black"
-				borderRadius="8px"
-				p={8}
-			>
-				<Stack width="100%" maxWidth="48rem" justifyContent="center">
+		<Wrapper>
+			<Box display="flex" justifyContent="center" width="100%" orderWidth="2px" p={8}>
+				<Stack width="100%" justifyContent="center">
 					<AccountData account={account} publicKey={publicKey} />
 					<Divider my={8} borderWidth="2px" borderColor="black" />
 					<SendTransaction
@@ -57,21 +48,20 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 					/>
 					<Divider my={8} borderWidth="2px" borderColor="black" />
 					<BalanceChecker />
-					<Divider my={8} borderWidth="2px" borderColor="black" />
-
-					<Box display="flex" justifyContent="space-between" alignItems="center" mt={6}>
-						<Text fontSize="sm" maxWidth="60%" overflow="hidden" textOverflow="ellipsis">
-							{publicKey}
-						</Text>
-						<Button onClick={resetAccount} variant="outline" variantColor="red">
-              Close Account
-						</Button>
-					</Box>
 				</Stack>
 			</Box>
 
 			<Info operations={operations} />
-		</>
+
+			<Stack direction="row" justifyContent="space-between" alignItems="center" p={6}>
+				<Text fontSize="sm" maxWidth="60%" overflow="hidden" textOverflow="ellipsis">
+					{publicKey}
+				</Text>
+				<Button onClick={resetAccount} variant="outline" variantColor="red">
+          Close Account
+				</Button>
+			</Stack>
+		</Wrapper>
 	)
 }
 
@@ -82,3 +72,29 @@ Wallet.propTypes = {
 	secret: PropTypes.string,
 	resetAccount: PropTypes.func,
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 48rem;
+  flex-direction: column;
+  position: relative;
+  color: #000;
+  background: #fff;
+  background-clip: padding-box;
+  border: solid 5px transparent;
+  border-radius: 1em;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -4px;
+    border-radius: inherit;
+    background: linear-gradient(to right, blue, violet);
+  }
+`

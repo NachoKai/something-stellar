@@ -10,6 +10,8 @@ import {
 	AccordionIcon,
 	Tooltip,
 } from '@chakra-ui/core'
+import { VscBook } from 'react-icons/vsc'
+import { BsInfoCircle } from 'react-icons/bs'
 import PropTypes from 'prop-types'
 
 import Operations from './Operations'
@@ -52,18 +54,8 @@ const Info = ({ operations }) => {
 	}
 
 	return (
-		<Box
-			display="flex"
-			justifyContent="center"
-			width="100%"
-			maxWidth="48rem"
-			borderWidth="2px"
-			borderColor="black"
-			borderRadius="8px"
-			p={8}
-			m={8}
-		>
-			<Stack width="100%" maxWidth="48rem" justifyContent="center">
+		<Box display="flex" justifyContent="center" width="100%">
+			<Stack width="100%" justifyContent="center">
 				{loading ? (
 					<Text fontSize="xl">Loading...</Text>
 				) : error ? (
@@ -73,9 +65,12 @@ const Info = ({ operations }) => {
 						<AccordionItem>
 							<AccordionHeader>
 								<Box flex="1" textAlign="left">
-									<Text fontSize="xl" fontWeight={600}>
-                    Operations
-									</Text>
+									<Stack direction="row" alignItems="center" spacing="2">
+										<Text fontSize="xl" fontWeight={600}>
+                      Operations
+										</Text>
+										<VscBook size={24} />
+									</Stack>
 								</Box>
 								<AccordionIcon />
 							</AccordionHeader>
@@ -87,9 +82,12 @@ const Info = ({ operations }) => {
 						<AccordionItem>
 							<AccordionHeader>
 								<Box flex="1" textAlign="left">
-									<Text fontSize="xl" fontWeight={600}>
-                    More Info
-									</Text>
+									<Stack direction="row" alignItems="center" spacing="2">
+										<Text fontSize="xl" fontWeight={600}>
+                      More Info
+										</Text>
+										<BsInfoCircle size={20} />
+									</Stack>
 								</Box>
 								<AccordionIcon />
 							</AccordionHeader>

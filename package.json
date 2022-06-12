@@ -14,7 +14,8 @@
     "react-dom": "^16.13.0",
     "react-icons": "^4.4.0",
     "react-scripts": "^3.4.0",
-    "stellar-sdk": "^3.3.0"
+    "stellar-sdk": "^3.3.0",
+    "styled-components": "^5.3.5"
   },
   "scripts": {
     "start": "react-scripts start",
