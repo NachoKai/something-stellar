@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Image, useColorMode } from '@chakra-ui/react'
+import styled from 'styled-components'
 
 import SaturnSVG from './assets/saturn.svg'
 import Main from './components/Main'
@@ -16,9 +17,10 @@ function App() {
 			p={3}
 			pt={6}
 		>
-			<Image
+			<Saturn
 				alt="Saturn"
 				boxSize="10vw"
+				colormode={colorMode}
 				mb={8}
 				objectFit="cover"
 				src={SaturnSVG}
@@ -30,3 +32,7 @@ function App() {
 }
 
 export default App
+
+const Saturn = styled(Image)`
+  ${p => (p.colormode === 'dark' ? 'filter: invert(1);' : '')}
+`
