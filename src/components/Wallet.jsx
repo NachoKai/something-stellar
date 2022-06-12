@@ -92,6 +92,6 @@ const Wrapper = styled.div`
     z-index: -1;
     margin: -4px;
     border-radius: inherit;
-    background: linear-gradient(to right, blue, violet);
+    background: linear-gradient(to right, black, black);
   }
 `
