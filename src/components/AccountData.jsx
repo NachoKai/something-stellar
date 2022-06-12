@@ -10,8 +10,7 @@ import {
 	Divider,
 } from '@chakra-ui/react'
 import { formatDistance } from 'date-fns'
-import { BsWallet2 } from 'react-icons/bs'
-import { GrKey } from 'react-icons/gr'
+import { BsWallet2, BsKey } from 'react-icons/bs'
 import PropTypes from 'prop-types'
 
 import AccountBalance from './AccountBalance'
@@ -27,7 +26,7 @@ const AccountData = ({ publicKey, account }) => {
 					<Text fontSize="xl" fontWeight={600}>
             Public Key
 					</Text>
-					<GrKey size={16} />
+					<BsKey size={20} />
 				</Stack>
 			</GradientText>
 
@@ -54,7 +53,7 @@ const AccountData = ({ publicKey, account }) => {
 					<Text fontSize="xl" fontWeight={600}>
             Account Balance
 					</Text>
-					<BsWallet2 size={16} />
+					<BsWallet2 size={18} />
 				</Stack>
 			</GradientText>
 

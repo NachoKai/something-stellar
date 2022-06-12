@@ -33,7 +33,7 @@ const Info = ({ operations }) => {
 									<Text fontSize="md" fontWeight={600}>
                     Operations
 									</Text>
-									<VscBook size={18} />
+									<VscBook size={20} />
 								</Stack>
 							</GradientText>
 							<AccordionIcon />

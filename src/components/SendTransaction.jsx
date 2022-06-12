@@ -13,7 +13,7 @@ import {
 	useToast,
 	Stack,
 } from '@chakra-ui/react'
-import { GrSend } from 'react-icons/gr'
+import { TbSend } from 'react-icons/tb'
 
 import sendTransaction from '../utils/sendTransaction'
 import GradientText from './common/GradientText'
@@ -78,7 +78,7 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 					<Text fontSize="xl" fontWeight={600}>
             Send XLM
 					</Text>
-					<GrSend size={18} />
+					<TbSend size={20} />
 				</Stack>
 			</GradientText>
 
