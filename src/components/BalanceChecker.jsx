@@ -14,6 +14,7 @@ const BalanceChecker = () => {
 	const checkBalance = async () => {
 		try {
 			const account = await loadAccount(accountToCheck)
+
 			setCheckedAccount(account)
 		} catch (err) {
 			toast({

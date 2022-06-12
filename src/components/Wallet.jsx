@@ -31,6 +31,7 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 	const updateAccount = () => {
 		const getData = async () => {
 			const account = await loadAccount(publicKey)
+
 			setAccount(account)
 		}
 
@@ -40,6 +41,7 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 	const updateOperations = () => {
 		const getData = async () => {
 			const operations = await getOperations(publicKey)
+
 			setOperations(operations)
 		}
 

@@ -5,6 +5,7 @@ import server from './server'
 const sendTransaction = async (secret, destination, amount) => {
 	try {
 		const sourceKeys = StellarSdk.Keypair.fromSecret(secret)
+
 		await server.loadAccount(destination)
 		const sourceAccount = await server.loadAccount(sourceKeys.publicKey())
 
