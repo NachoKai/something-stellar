@@ -41,7 +41,7 @@ const Main = () => {
 	return (
 		<>
 			<Wallet publicKey={publicKey} secret={secret} resetAccount={resetAccount} />
-			<Info />
+			<Info publicKey={publicKey} />
 		</>
 	)
 }

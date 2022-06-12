@@ -10,8 +10,11 @@ import {
 	AccordionIcon,
 	Tooltip,
 } from '@chakra-ui/core'
+import PropTypes from 'prop-types'
 
-const Info = () => {
+import Operations from './Operations'
+
+const Info = ({ publicKey }) => {
 	const [data, setData] = useState(null)
 	const [feeStats, setFeeStats] = useState(null)
 	const [loading, setLoading] = useState(true)
@@ -71,12 +74,33 @@ const Info = () => {
 							<AccordionHeader>
 								<Box flex="1" textAlign="left">
 									<Text fontSize="xl" fontWeight={600}>
-                    Fee Stats
+                    Operations
 									</Text>
 								</Box>
 								<AccordionIcon />
 							</AccordionHeader>
 							<AccordionPanel pb={4}>
+								<Operations publicKey={publicKey} />
+							</AccordionPanel>
+						</AccordionItem>
+
+						<AccordionItem>
+							<AccordionHeader>
+								<Box flex="1" textAlign="left">
+									<Text fontSize="xl" fontWeight={600}>
+                    More Info
+									</Text>
+								</Box>
+								<AccordionIcon />
+							</AccordionHeader>
+							<AccordionPanel pb={4}>
+								<Text mb={4}>
+									<b>Network:</b> {data?.network_passphrase}
+								</Text>
+
+								<Text fontSize="xl" fontWeight={600}>
+                  Fee Stats
+								</Text>
 								<Text>
 									<Tooltip placement="top" label="The last ledger's sequence number.">
 										<b>Last Ledger: </b>
@@ -133,36 +157,6 @@ const Info = () => {
 								</Text>
 							</AccordionPanel>
 						</AccordionItem>
-
-						<AccordionItem>
-							<AccordionHeader>
-								<Box flex="1" textAlign="left">
-									<Text fontSize="xl" fontWeight={600}>
-                    More Info
-									</Text>
-								</Box>
-								<AccordionIcon />
-							</AccordionHeader>
-							<AccordionPanel pb={4}>
-								<Text>Core latest ledger: {data?.core_latest_ledger}</Text>
-								<Text>
-                  Core supported protocol_version: {data?.core_supported_protocol_version}
-								</Text>
-								<Text>Core version: {data?.core_version}</Text>
-								<Text>Current protocol_version: {data?.current_protocol_version}</Text>
-								<Text>History elder ledger: {data?.history_elder_ledger}</Text>
-								<Text>History latest ledger: {data?.history_latest_ledger}</Text>
-								<Text>
-                  History latest ledger closed_at: {data?.history_latest_ledger_closed_at}
-								</Text>
-								<Text>Horizon version: {data?.horizon_version}</Text>
-								<Text>Ingest latest ledger: {data?.ingest_latest_ledger}</Text>
-								<Text>Network passphrase: {data?.network_passphrase}</Text>
-								<Text>
-                  Supported protocol version: {data?.supported_protocol_version}
-								</Text>
-							</AccordionPanel>
-						</AccordionItem>
 					</Accordion>
 				)}
 			</Stack>
@@ -171,3 +165,7 @@ const Info = () => {
 }
 
 export default Info
+
+Info.propTypes = {
+	publicKey: PropTypes.string,
+}
