@@ -86,7 +86,7 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 				onChange={value => setAmount(value)}
 			>
 				<InputLeftAddon>XLM</InputLeftAddon>
-				<NumberInputField roundLeft="0" />
+				<NumberInputField roundLeft="0" placeholder="0.000" />
 				<NumberInputStepper>
 					<NumberIncrementStepper />
 					<NumberDecrementStepper />

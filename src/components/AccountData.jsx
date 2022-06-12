@@ -24,7 +24,7 @@ const AccountData = ({ publicKey, account }) => {
 				<Text fontSize="xl" fontWeight={600}>
           Public Key
 				</Text>
-				<GrKey size={16} />
+				<GrKey size={16}/>
 			</Stack>
 
 			<InputGroup>
