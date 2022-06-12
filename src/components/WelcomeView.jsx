@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import StellarSdk from 'stellar-sdk'
 import {
@@ -52,7 +53,7 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 
 	return (
 		<Stack width="100%" maxWidth="48rem" justifyContent="center">
-			<Heading>Welcome to your Stellar Wallet</Heading>
+			<Heading>Welcome to your <GradientText>Stellar Wallet</GradientText></Heading>
 			<Text fontSize="xl">Create your stellar account quickly and easily</Text>
 			<Button onClick={handleCreateAccount} size="lg" variantColor="blue" mt="24px">
         Create Account
@@ -84,3 +85,14 @@ WelcomeView.propTypes = {
 	setSecret: PropTypes.func,
 	setKeyCopied: PropTypes.func,
 }
+
+const GradientText = styled.span`
+  background: linear-gradient(to right, #63B3ED, #2B6CB0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -o-background-clip: text;
+  -o-text-fill-color: transparent;
+`
