@@ -26,7 +26,6 @@ const CopyView = ({ publicKey, secret, setKeyCopied, resetAccount }) => {
 			title: 'Creating Account',
 			description: 'Please wait...',
 			status: 'warning',
-			duration: 5000,
 			isClosable: true,
 		})
 
@@ -38,7 +37,6 @@ const CopyView = ({ publicKey, secret, setKeyCopied, resetAccount }) => {
 			title: 'Account created and funded',
 			description: `Transaction hash: ${hash}`,
 			status: 'success',
-			duration: 5000,
 			isClosable: true,
 		})
 		setKeyCopied(true)

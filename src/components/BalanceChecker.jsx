@@ -19,7 +19,6 @@ const BalanceChecker = () => {
 				title: 'An error has occurred',
 				description: err.message,
 				status: 'error',
-				duration: 5000,
 				isClosable: true,
 			})
 		}

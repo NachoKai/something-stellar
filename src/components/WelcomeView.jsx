@@ -46,7 +46,6 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 					title: 'Error',
 					description: 'Make sure your secret key is correct',
 					status: 'error',
-					duration: 5000,
 					isClosable: true,
 				})
 			}
@@ -55,7 +54,6 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 				title: 'An error has occurred',
 				description: err.message,
 				status: 'error',
-				duration: 5000,
 				isClosable: true,
 			})
 		}

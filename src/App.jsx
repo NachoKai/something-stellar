@@ -13,7 +13,7 @@ function App() {
 				alignItems="center"
 				justifyContent="center"
 				flexDirection="column"
-				p={8}
+				p={2}
 			>
 				<Image src={SaturnSVG} size="10vw" objectFit="cover" alt="Saturn" mb={8} />
 				<Main />

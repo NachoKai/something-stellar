@@ -32,9 +32,9 @@ const Info = ({ operations }) => {
 			const response = await fetch('https://horizon-testnet.stellar.org/')
 			const data = await response.json()
 			setData(data)
-		} catch (error) {
-			console.error('Error fetching data: ', error)
-			setError(error)
+		} catch (err) {
+			console.error('Error fetching data: ', err)
+			setError(err)
 		} finally {
 			setLoading(false)
 		}
@@ -45,9 +45,9 @@ const Info = ({ operations }) => {
 			const response = await fetch('https://horizon-testnet.stellar.org/fee_stats')
 			const data = await response.json()
 			setFeeStats(data)
-		} catch (error) {
-			console.error('Error fetching fee stats: ', error)
-			setError(error)
+		} catch (err) {
+			console.error('Error fetching fee stats: ', err)
+			setError(err)
 		} finally {
 			setLoading(false)
 		}
@@ -57,9 +57,13 @@ const Info = ({ operations }) => {
 		<Box display="flex" justifyContent="center" width="100%">
 			<Stack width="100%" justifyContent="center">
 				{loading ? (
-					<Text fontSize="xl" p={4}>Loading...</Text>
+					<Text fontSize="xl" p={4}>
+            Loading...
+					</Text>
 				) : error ? (
-					<Text fontSize="xl" p={4}>Error!</Text>
+					<Text fontSize="xl" p={4}>
+            Error!
+					</Text>
 				) : (
 					<Accordion allowToggle>
 						<AccordionItem>

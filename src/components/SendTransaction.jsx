@@ -31,7 +31,6 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 					title: 'Sending XLM',
 					description: 'Please wait...',
 					status: 'warning',
-					duration: 5000,
 					isClosable: true,
 				})
 
@@ -41,7 +40,6 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 					title: `${amount} XLM have been sent`,
 					description: `Transaction hash: ${result.hash}`,
 					status: 'success',
-					duration: 5000,
 					isClosable: true,
 				})
 
@@ -53,7 +51,6 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 					title: 'An error has occurred',
 					description: err.message,
 					status: 'error',
-					duration: 5000,
 					isClosable: true,
 				})
 				setDestination('')
@@ -63,7 +60,6 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 				title: 'Invalid data',
 				description: 'Be sure to enter a correct address and send a valid amount.',
 				status: 'error',
-				duration: 5000,
 				isClosable: true,
 			})
 			setDestination('')
