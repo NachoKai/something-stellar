@@ -57,19 +57,19 @@ const Info = ({ operations }) => {
 		<Box display="flex" justifyContent="center" width="100%">
 			<Stack width="100%" justifyContent="center">
 				{loading ? (
-					<Text fontSize="xl">Loading...</Text>
+					<Text fontSize="xl" p={4}>Loading...</Text>
 				) : error ? (
-					<Text fontSize="xl">Error!</Text>
+					<Text fontSize="xl" p={4}>Error!</Text>
 				) : (
 					<Accordion allowToggle>
 						<AccordionItem>
 							<AccordionHeader>
 								<Box flex="1" textAlign="left">
 									<Stack direction="row" alignItems="center" spacing="2">
-										<Text fontSize="xl" fontWeight={600}>
+										<Text fontSize="md" fontWeight={600}>
                       Operations
 										</Text>
-										<VscBook size={24} />
+										<VscBook size={18} />
 									</Stack>
 								</Box>
 								<AccordionIcon />
@@ -83,10 +83,10 @@ const Info = ({ operations }) => {
 							<AccordionHeader>
 								<Box flex="1" textAlign="left">
 									<Stack direction="row" alignItems="center" spacing="2">
-										<Text fontSize="xl" fontWeight={600}>
+										<Text fontSize="md" fontWeight={600}>
                       More Info
 										</Text>
-										<BsInfoCircle size={20} />
+										<BsInfoCircle size={16} />
 									</Stack>
 								</Box>
 								<AccordionIcon />

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Box, Button, Stack, Text, Divider } from '@chakra-ui/core'
+import { Box, Button, Stack, Divider } from '@chakra-ui/core'
 import styled from 'styled-components'
 
 import AccountData from './AccountData'
@@ -53,12 +53,9 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 
 			<Info operations={operations} />
 
-			<Stack direction="row" justifyContent="space-between" alignItems="center" p={6}>
-				<Text fontSize="sm" maxWidth="60%" overflow="hidden" textOverflow="ellipsis">
-					{publicKey}
-				</Text>
+			<Stack direction="row" justifyContent="flex-end" alignItems="center" p={6}>
 				<Button onClick={resetAccount} variant="outline" variantColor="red">
-          Close Account
+          Close
 				</Button>
 			</Stack>
 		</Wrapper>

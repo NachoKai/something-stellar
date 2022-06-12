@@ -31,7 +31,7 @@ const BalanceChecker = () => {
 				<Text fontSize="xl" fontWeight={600}>
           Balance Checker
 				</Text>
-				<AiOutlineKey size={24} />
+				<AiOutlineKey size={20} />
 			</Stack>
 			<InputGroup mt={6}>
 				<Input
@@ -42,7 +42,7 @@ const BalanceChecker = () => {
 					mr={2}
 				/>
 				<Button onClick={checkBalance} variantColor="green">
-          Check Balance
+          Check
 				</Button>
 			</InputGroup>
 			{checkedAccount?.balances?.map((balance, index) => (

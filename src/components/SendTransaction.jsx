@@ -12,7 +12,9 @@ import {
 	InputLeftAddon,
 	Button,
 	useToast,
+	Stack,
 } from '@chakra-ui/core'
+import { GrSend } from 'react-icons/gr'
 
 import sendTransaction from '../utils/sendTransaction'
 
@@ -22,8 +24,6 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 	const [amount, setAmount] = useState()
 
 	const sendXLM = async () => {
-		setDestination('')
-		setAmount('')
 		// All secret keys are 56 characters long
 		if (destination.length === 56 && amount > 0) {
 			try {
@@ -47,6 +47,7 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 
 				updateAccount()
 				updateOperations()
+				setDestination('')
 			} catch (err) {
 				toast({
 					title: 'An error has occurred',
@@ -55,6 +56,7 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 					duration: 5000,
 					isClosable: true,
 				})
+				setDestination('')
 			}
 		} else {
 			toast({
@@ -64,14 +66,19 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 				duration: 5000,
 				isClosable: true,
 			})
+			setDestination('')
 		}
 	}
 
 	return (
 		<>
-			<Text fontSize="xl" fontWeight={600} mt={6}>
-        Send XLM
-			</Text>
+			<Stack direction="row" alignItems="center" spacing="2" mt={6}>
+				<Text fontSize="xl" fontWeight={600}>
+          Send XLM
+				</Text>
+				<GrSend size={18} />
+			</Stack>
+
 			<NumberInput
 				step="0.001"
 				mt={6}

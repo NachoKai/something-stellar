@@ -6,8 +6,11 @@ import {
 	InputRightElement,
 	Text,
 	useClipboard,
+	Stack,
 } from '@chakra-ui/core'
 import { formatDistance } from 'date-fns'
+import { BsWallet2 } from 'react-icons/bs'
+import { GrKey } from 'react-icons/gr'
 import PropTypes from 'prop-types'
 
 import AccountBalance from './AccountBalance'
@@ -17,9 +20,13 @@ const AccountData = ({ publicKey, account }) => {
 
 	return (
 		<>
-			<Text fontSize="xl" fontWeight={600} mb={3}>
-        Public Key
-			</Text>
+			<Stack direction="row" alignItems="center" spacing="2" mb={3}>
+				<Text fontSize="xl" fontWeight={600}>
+          Public Key
+				</Text>
+				<GrKey size={16} />
+			</Stack>
+
 			<InputGroup>
 				<Input readOnly pr="4.5rem" value={publicKey} />
 				<InputRightElement width="4.5rem">
@@ -29,9 +36,13 @@ const AccountData = ({ publicKey, account }) => {
 				</InputRightElement>
 			</InputGroup>
 
-			<Text mt={6} mb={3} fontSize="xl" fontWeight={600}>
-        Account Balance
-			</Text>
+			<Stack direction="row" alignItems="center" spacing="2" mt={6} mb={3}>
+				<Text fontSize="xl" fontWeight={600}>
+          Account Balance
+				</Text>
+				<BsWallet2 size={16} />
+			</Stack>
+
 			{account ? (
 				<>
 					{account?.last_modified_time ? (
@@ -46,7 +57,7 @@ const AccountData = ({ publicKey, account }) => {
 					))}
 				</>
 			) : (
-				'Loading...'
+				<Text>Loading...</Text>
 			)}
 		</>
 	)
