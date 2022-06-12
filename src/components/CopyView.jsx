@@ -63,7 +63,7 @@ const CopyView = ({ publicKey, secret, setKeyCopied, resetAccount }) => {
 					</InputGroup>
 					<Box display="flex" justifyContent="space-between">
 						<Button onClick={resetAccount}>Back</Button>
-						<Button onClick={handleCopied} variantColor="blue" disabled={!hasCopied}>
+						<Button disabled={!hasCopied} variantColor="blue" onClick={handleCopied}>
               Continue
 						</Button>
 					</Box>

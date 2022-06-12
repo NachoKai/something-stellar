@@ -9,14 +9,14 @@ function App() {
 		<ThemeProvider>
 			<CSSReset />
 			<Box
-				display="flex"
 				alignItems="center"
-				justifyContent="center"
+				display="flex"
 				flexDirection="column"
-				p={2}
+				justifyContent="center"
 				mt={4}
+				p={2}
 			>
-				<Image src={SaturnSVG} size="10vw" objectFit="cover" alt="Saturn" mb={8} />
+				<Image alt="Saturn" mb={8} objectFit="cover" size="10vw" src={SaturnSVG} />
 				<Main />
 			</Box>
 		</ThemeProvider>

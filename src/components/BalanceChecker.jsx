@@ -29,11 +29,11 @@ const BalanceChecker = () => {
 		<>
 			<GradientText>
 				<Stack
-					direction="row"
 					alignItems="center"
-					spacing="2"
-					mt={8}
+					direction="row"
 					justifyContent="space-between"
+					mt={8}
+					spacing="2"
 				>
 					<Text fontSize="xl" fontWeight={600}>
             Balance Checker
@@ -44,19 +44,19 @@ const BalanceChecker = () => {
 
 			<InputGroup mt={6}>
 				<Input
-					onChange={({ target: { value } }) => setAccountToCheck(value)}
-					value={accountToCheck}
+					isInvalid={accountToCheck.length !== 56 && accountToCheck.length > 0}
+					mr={2}
 					placeholder="Account to check"
 					roundRight="0"
-					mr={2}
-					isInvalid={accountToCheck.length !== 56 && accountToCheck.length > 0}
+					value={accountToCheck}
+					onChange={({ target: { value } }) => setAccountToCheck(value)}
 				/>
-				<Button onClick={checkBalance} variantColor="green">
+				<Button variantColor="green" onClick={checkBalance}>
           Check
 				</Button>
 			</InputGroup>
 			{checkedAccount?.balances?.map((balance, index) => (
-				<AccountBalance balance={balance} index={index} key={index} />
+				<AccountBalance key={index} balance={balance} index={index} />
 			))}
 		</>
 	)

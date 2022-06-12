@@ -23,11 +23,11 @@ const AccountData = ({ publicKey, account }) => {
 		<>
 			<GradientText>
 				<Stack
-					direction="row"
 					alignItems="center"
+					direction="row"
 					justifyContent="space-between"
-					spacing="2"
 					mb={3}
+					spacing="2"
 				>
 					<Text fontSize="xl" fontWeight={600}>
             Public Key
@@ -37,7 +37,7 @@ const AccountData = ({ publicKey, account }) => {
 			</GradientText>
 
 			<InputGroup>
-				<Input readOnly pr="4.5rem" value={publicKey} placeholder="Public Key" />
+				<Input readOnly placeholder="Public Key" pr="4.5rem" value={publicKey} />
 				<InputRightElement width="4.5rem">
 					<Button h="1.75rem" size="sm" onClick={onCopy}>
 						{hasCopied ? 'Copied' : 'Copy'}
@@ -47,12 +47,12 @@ const AccountData = ({ publicKey, account }) => {
 
 			<GradientText>
 				<Stack
-					direction="row"
 					alignItems="center"
+					direction="row"
 					justifyContent="space-between"
-					spacing="2"
-					mt={6}
 					mb={3}
+					mt={6}
+					spacing="2"
 				>
 					<Text fontSize="xl" fontWeight={600}>
             Account Balance
@@ -71,7 +71,7 @@ const AccountData = ({ publicKey, account }) => {
 					) : null}
 
 					{account.balances?.map((balance, index) => (
-						<AccountBalance balance={balance} index={index} key={index} />
+						<AccountBalance key={index} balance={balance} index={index} />
 					))}
 				</>
 			) : (

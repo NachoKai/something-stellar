@@ -61,7 +61,7 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
             saved your secret key, you will have lost it forever.
 					</ModalBody>
 					<ModalFooter>
-						<Button variantColor="red" mr={3} onClick={resetAccount}>
+						<Button mr={3} variantColor="red" onClick={resetAccount}>
               Yes
 						</Button>
 						<Button variantColor="gray" onClick={onClose}>
@@ -71,12 +71,12 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 				</ModalContent>
 			</Modal>
 
-			<Box display="flex" justifyContent="center" width="100%" orderWidth="2px" p={8}>
-				<Stack width="100%" justifyContent="center">
+			<Box display="flex" justifyContent="center" orderWidth="2px" p={8} width="100%">
+				<Stack justifyContent="center" width="100%">
 					<AccountData account={account} publicKey={publicKey} />
-					<Divider my={8} borderWidth="1px" borderColor="lightgrey" />
+					<Divider borderColor="lightgrey" borderWidth="1px" my={8} />
 					<BalanceChecker />
-					<Divider my={8} borderWidth="1px" borderColor="lightgrey" />
+					<Divider borderColor="lightgrey" borderWidth="1px" my={8} />
 					<SendTransaction
 						secret={secret}
 						updateAccount={updateAccount}
@@ -87,8 +87,8 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 
 			<Info operations={operations} />
 
-			<Stack direction="row" justifyContent="flex-end" alignItems="center" p={6}>
-				<Button onClick={onOpen} variant="outline" variantColor="red">
+			<Stack alignItems="center" direction="row" justifyContent="flex-end" p={6}>
+				<Button variant="outline" variantColor="red" onClick={onOpen}>
           Close
 				</Button>
 			</Stack>

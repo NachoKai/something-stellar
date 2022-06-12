@@ -24,11 +24,11 @@ const Info = ({ operations }) => {
 						<AccordionHeader justifyContent="space-between">
 							<GradientText>
 								<Stack
-									direction="row"
 									alignItems="center"
+									direction="row"
+									justifyContent="space-between"
 									spacing="2"
 									width="100%"
-									justifyContent="space-between"
 								>
 									<Text fontSize="md" fontWeight={600}>
                     Operations

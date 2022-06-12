@@ -9,19 +9,19 @@ const Operation = ({ operation, index }) => {
 	return (
 		<Box
 			key={index}
-			p={4}
-			my={3}
-			borderWidth="1px"
 			borderColor="lightgrey"
 			borderRadius="8px"
+			borderWidth="1px"
 			boxShadow="0 10px 15px -3px white,0 4px 6px -4px grey;"
+			my={3}
+			p={4}
 		>
-			<Stack direction="row" justifyContent="space-between" alignItems="center" mb={2}>
-				<Stack direction="row" alignItems="center" spacing={1}>
-					<Text fontSize="xl" color="green.600">
+			<Stack alignItems="center" direction="row" justifyContent="space-between" mb={2}>
+				<Stack alignItems="center" direction="row" spacing={1}>
+					<Text color="green.600" fontSize="xl">
 						{operation?.amount ? <b>{Number(operation.amount).toFixed(2)}</b> : null}
 					</Text>
-					<Text fontSize="md" color="green.600">
+					<Text color="green.600" fontSize="md">
 						<b>{startCase(operation.asset_type)}</b>
 					</Text>
 				</Stack>
@@ -59,8 +59,8 @@ const Operation = ({ operation, index }) => {
 				</Text>
 			) : null}
 
-			<Stack direction="row" justifyContent="space-between" alignItems="center" mt={2}>
-				<Stack direction="row" alignItems="center" spacing={1}>
+			<Stack alignItems="center" direction="row" justifyContent="space-between" mt={2}>
+				<Stack alignItems="center" direction="row" spacing={1}>
 					<MdSend />
 					<Text fontSize="sm" ml={1}>
 						<b>{startCase(operation.type)}</b>

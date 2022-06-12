@@ -13,7 +13,7 @@ const Operations = ({ operations }) => {
 					return dateB - dateA
 				})
 				.map((operation, index) => {
-					return <Operation operation={operation} index={index} key={index} />
+					return <Operation key={index} index={index} operation={operation} />
 				})}
 		</>
 	)

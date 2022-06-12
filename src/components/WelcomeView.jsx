@@ -59,34 +59,34 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 	}
 
 	return (
-		<Stack width="100%" maxWidth="48rem" justifyContent="center">
+		<Stack justifyContent="center" maxWidth="48rem" width="100%">
 			<Heading>
         Welcome to your <GradientText>Stellar Wallet</GradientText>
 			</Heading>
 			<Text fontSize="xl">Create your stellar account quickly and easily</Text>
 			<Button
-				onClick={handleCreateAccount}
+				boxShadow="0 10px 15px -3px skyblue,0 4px 6px -4px blue;"
+				mt="24px"
 				size="lg"
 				variantColor="blue"
-				mt="24px"
-				boxShadow="0 10px 15px -3px skyblue,0 4px 6px -4px blue;"
+				onClick={handleCreateAccount}
 			>
         Create Account
 			</Button>
 
-			<Divider my={8} borderWidth="1px" borderColor="lightgrey" />
+			<Divider borderColor="lightgrey" borderWidth="1px" my={8} />
 
 			<Text mt={8}>Or import an account with your secret key:</Text>
 			<InputGroup>
 				<Input
-					onChange={({ target: { value } }) => setSecretToImport(value)}
-					value={secretToImport}
+					isInvalid={secretToImport.length !== 56 && secretToImport.length > 0}
+					mr={2}
 					placeholder="Account to check"
 					roundRight="0"
-					mr={2}
-					isInvalid={secretToImport.length !== 56 && secretToImport.length > 0}
+					value={secretToImport}
+					onChange={({ target: { value } }) => setSecretToImport(value)}
 				/>
-				<Button onClick={importAccount} variantColor="green">
+				<Button variantColor="green" onClick={importAccount}>
           Import
 				</Button>
 			</InputGroup>

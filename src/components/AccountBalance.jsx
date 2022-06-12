@@ -13,10 +13,10 @@ const AccountBalance = ({ balance, index }) => {
 	return (
 		<InputGroup mt={6}>
 			<InputLeftAddon>{index}</InputLeftAddon>
-			<Input roundedLeft="0" roundRight="0" readOnly value={balance?.balance} />
+			<Input readOnly roundRight="0" roundedLeft="0" value={balance?.balance} />
 			<InputRightAddon>XLM</InputRightAddon>
 			<InputRightAddon>
-				<Tooltip placement="top" label="Asset Type">
+				<Tooltip label="Asset Type" placement="top">
 					{startCase(balance?.asset_type)}
 				</Tooltip>
 			</InputRightAddon>

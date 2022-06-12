@@ -21,23 +21,23 @@ const Main = () => {
 	if (!secret || !publicKey) {
 		return (
 			<WelcomeView
-				setSecret={setSecret}
-				setPublicKey={setPublicKey}
 				setKeyCopied={setKeyCopied}
+				setPublicKey={setPublicKey}
+				setSecret={setSecret}
 			/>
 		)
 	} else if (!isKeyCopied) {
 		return (
 			<CopyView
-				secret={secret}
 				publicKey={publicKey}
-				setKeyCopied={setKeyCopied}
 				resetAccount={resetAccount}
+				secret={secret}
+				setKeyCopied={setKeyCopied}
 			/>
 		)
 	}
 
-	return <Wallet publicKey={publicKey} secret={secret} resetAccount={resetAccount} />
+	return <Wallet publicKey={publicKey} resetAccount={resetAccount} secret={secret} />
 }
 
 export default Main

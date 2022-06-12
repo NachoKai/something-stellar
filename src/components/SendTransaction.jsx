@@ -70,11 +70,11 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 		<>
 			<GradientText>
 				<Stack
-					direction="row"
 					alignItems="center"
-					spacing="2"
-					mt={6}
+					direction="row"
 					justifyContent="space-between"
+					mt={6}
+					spacing="2"
 				>
 					<Text fontSize="xl" fontWeight={600}>
             Send XLM
@@ -84,13 +84,13 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 			</GradientText>
 
 			<NumberInput
-				step="0.001"
 				mt={6}
+				step="0.001"
 				value={amount}
 				onChange={value => setAmount(value)}
 			>
 				<InputLeftAddon>XLM</InputLeftAddon>
-				<NumberInputField roundLeft="0" placeholder="0.000" />
+				<NumberInputField placeholder="0.000" roundLeft="0" />
 				<NumberInputStepper>
 					<NumberIncrementStepper />
 					<NumberDecrementStepper />
@@ -98,18 +98,18 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 			</NumberInput>
 			<InputGroup mt={6}>
 				<Input
-					onChange={({ target: { value } }) => setDestination(value)}
-					value={destination}
+					isInvalid={destination.length !== 56 && destination.length > 0}
 					placeholder="Recipient"
 					roundRight="0"
-					isInvalid={destination.length !== 56 && destination.length > 0}
+					value={destination}
+					onChange={({ target: { value } }) => setDestination(value)}
 				/>
 			</InputGroup>
 			<Button
-				mt={6}
-				onClick={sendXLM}
-				variantColor="blue"
 				boxShadow="0 10px 15px -3px skyblue,0 4px 6px -4px blue;"
+				mt={6}
+				variantColor="blue"
+				onClick={sendXLM}
 			>
         Send
 			</Button>
