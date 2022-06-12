@@ -8,7 +8,7 @@ let signWindow
 let connectWindow
 
 export function openConnectWindow() {
-	console.log('Opening connect window')
+	console.info('Opening connect window')
 	connectWindow = window.open(
 		`${simpleSignerURL}/connect`,
 		'Connect_Window',
@@ -17,7 +17,7 @@ export function openConnectWindow() {
 }
 
 export function openSignWindowUsingUrlParams() {
-	console.log('Opening sign window using URL params')
+	console.info('Opening sign window using URL params')
 	window.open(
 		`${simpleSignerURL}/sign?xdr=${sampleXdr}&description=A sample description`,
 		'Sign_Window',
@@ -26,7 +26,7 @@ export function openSignWindowUsingUrlParams() {
 }
 
 export function openSignWindowUsingPostMessage() {
-	console.log('Opening sign window without URL params')
+	console.info('Opening sign window without URL params')
 	signWindow = window.open(
 		`${simpleSignerURL}/sign`,
 		'Sign_Window',
@@ -41,18 +41,18 @@ async function handleMessage(e) {
 
 	const eventMessage = e.data
 
-	console.log('Message from simple signer received: ', eventMessage)
+	console.info('Message from simple signer received: ', eventMessage)
 
 	if (eventMessage.type === 'onReady') {
 		if (eventMessage.page === 'connect') {
-			console.log('The connect page is ready')
+			console.info('The connect page is ready')
 		}
 
 		if (eventMessage.page === 'sign') {
-			console.log('The sign page is ready')
+			console.info('The sign page is ready')
 
 			if (signWindow) {
-				console.log('Sending parameters via postMessage')
+				console.info('Sending parameters via postMessage')
 				signWindow.postMessage(
 					{
 						xdr: sampleXdr,
@@ -77,7 +77,7 @@ async function handleMessage(e) {
 
 		// validate the public key
 		if (StellarSdk.Keypair.fromPublicKey(publicKey)) {
-			console.log('User connected with public key', publicKey)
+			console.info('User connected with public key', publicKey)
 		}
 	}
 
@@ -86,7 +86,7 @@ async function handleMessage(e) {
 
 		// validate the transaction
 		if (StellarSdk.xdr.TransactionEnvelope.validateXDR(signedXdr, 'base64')) {
-			console.log('The user has signed the transaction, the result is', signedXdr)
+			console.info('The user has signed the transaction, the result is', signedXdr)
 
 			const server = new StellarSdk.Server('https://horizon-testnet.stellar.org/')
 
@@ -100,7 +100,7 @@ async function handleMessage(e) {
 			try {
 				const transactionResult = await server.submitTransaction(transaction)
 
-				console.log(transactionResult)
+				console.info(transactionResult)
 			} catch (err) {
 				console.error('This is expected to fail.', err)
 			}
@@ -109,11 +109,11 @@ async function handleMessage(e) {
 
 	if (eventMessage.type === 'onCancel') {
 		if (eventMessage.page === 'connect') {
-			console.log('The user canceled the connect action')
+			console.info('The user canceled the connect action')
 		}
 
 		if (eventMessage.page === 'sign') {
-			console.log('The user canceled the sign action')
+			console.info('The user canceled the sign action')
 		}
 	}
 }

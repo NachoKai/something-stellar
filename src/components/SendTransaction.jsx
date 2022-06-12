@@ -72,7 +72,7 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 					align="center"
 					direction="row"
 					justify="space-between"
-					mt={6}
+					mt={3}
 					spacing="2"
 				>
 					<Text fontSize="xl" fontWeight={600}>

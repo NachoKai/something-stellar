@@ -60,11 +60,11 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 	}
 
 	return (
-		<Stack justify="center" maxW="48rem" spacing={2} w="100%">
+		<Stack justify="center" maxW="48rem" spacing={4} w="100%">
 			<Heading>
         Welcome to your <GradientText>Stellar Wallet</GradientText>
 			</Heading>
-			<Text fontSize="xl">Create your stellar account quickly and easily</Text>
+			<Text fontSize="xl" mb={6}>Create your stellar account quickly and easily</Text>
 			<Button
 				boxShadow="0 10px 15px -3px skyblue,0 4px 6px -4px blue;"
 				colorScheme="blue"
@@ -74,7 +74,7 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 			>
         Create Account
 			</Button>
-			<Button onClick={openConnectWindow}>Connect</Button>
+			<Button mb={6} onClick={openConnectWindow}>Connect</Button>
 			{/* <Button onClick={openSignWindowUsingUrlParams}>Open sign via URL</Button> */}
 			{/* <Button onClick={openSignWindowUsingPostMessage}>Open sign via postMessage</Button> */}
 

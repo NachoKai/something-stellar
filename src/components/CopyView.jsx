@@ -43,32 +43,30 @@ const CopyView = ({ publicKey, secret, setKeyCopied, resetAccount, colormode }) 
 	}
 
 	return (
-		<Wrapper colormode={colormode}>
-			<Box p={8}>
-				<Stack justify="center">
-					<Alert status="warning">
-						<AlertIcon />
-						<Text>
-              Before continuing, copy and save your secret in a private place, otherwise
-              you will not be able to return to your account.
-						</Text>
-					</Alert>
-					<InputGroup>
-						<Input readOnly pr="4.5rem" value={secret} />
-						<InputRightElement w="4.5rem">
-							<Button h="1.75rem" size="sm" onClick={onCopy}>
-								{hasCopied ? 'Copied' : 'Copy'}
-							</Button>
-						</InputRightElement>
-					</InputGroup>
-					<Box display="flex" justifyContent="space-between">
-						<Button onClick={resetAccount}>Back</Button>
-						<Button colorScheme="blue" disabled={!hasCopied} onClick={handleCopied}>
-              Continue
+		<Wrapper colormode={colormode} p={8}>
+			<Stack justify="center" spacing={4}>
+				<Alert status="warning">
+					<AlertIcon />
+					<Text>
+            Before continuing, copy and save your secret in a private place, otherwise you
+            will not be able to return to your account.
+					</Text>
+				</Alert>
+				<InputGroup>
+					<Input readOnly pr="4.5rem" value={secret} />
+					<InputRightElement w="4.5rem">
+						<Button h="1.75rem" size="sm" onClick={onCopy}>
+							{hasCopied ? 'Copied' : 'Copy'}
 						</Button>
-					</Box>
-				</Stack>
-			</Box>
+					</InputRightElement>
+				</InputGroup>
+				<Box display="flex" justifyContent="space-between">
+					<Button onClick={resetAccount}>Back</Button>
+					<Button colorScheme="blue" disabled={!hasCopied} onClick={handleCopied}>
+            Continue
+					</Button>
+				</Box>
+			</Stack>
 		</Wrapper>
 	)
 }

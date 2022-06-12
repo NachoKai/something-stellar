@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Image, useColorMode } from '@chakra-ui/react'
+import { Stack, Image, useColorMode } from '@chakra-ui/react'
 import styled from 'styled-components'
 
 import SaturnSVG from './assets/saturn.svg'
@@ -9,11 +9,12 @@ function App() {
 	const { colorMode, toggleColorMode } = useColorMode()
 
 	return (
-		<Box
-			alignItems="center"
+		<Stack
+			align="center"
 			display="flex"
 			flexDirection="column"
-			justifyContent="center"
+			h="100%"
+			justify="flex-start"
 			p={3}
 			pt={6}
 		>
@@ -27,7 +28,7 @@ function App() {
 				onClick={toggleColorMode}
 			/>
 			<Main colormode={colorMode} />
-		</Box>
+		</Stack>
 	)
 }
 

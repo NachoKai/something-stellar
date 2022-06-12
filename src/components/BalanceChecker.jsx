@@ -29,7 +29,7 @@ const BalanceChecker = () => {
 	return (
 		<>
 			<GradientText>
-				<Stack align="center" direction="row" justify="space-between" mt={8} spacing="2">
+				<Stack align="center" direction="row" justify="space-between" mt={3} spacing="2">
 					<Text fontSize="xl" fontWeight={600}>
             Balance Checker
 					</Text>

@@ -47,7 +47,7 @@ const AccountData = ({ publicKey, account }) => {
 					direction="row"
 					justify="space-between"
 					mb={3}
-					mt={6}
+					mt={3}
 					spacing="2"
 				>
 					<Text fontSize="xl" fontWeight={600}>

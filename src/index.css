@@ -1,3 +1,9 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
 .chakra-toast__inner {
   max-width: 90vw !important;
 }
