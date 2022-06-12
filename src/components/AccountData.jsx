@@ -14,18 +14,27 @@ import { GrKey } from 'react-icons/gr'
 import PropTypes from 'prop-types'
 
 import AccountBalance from './AccountBalance'
+import GradientText from './common/GradientText'
 
 const AccountData = ({ publicKey, account }) => {
 	const { onCopy, hasCopied } = useClipboard(publicKey)
 
 	return (
 		<>
-			<Stack direction="row" alignItems="center" spacing="2" mb={3}>
-				<Text fontSize="xl" fontWeight={600}>
-          Public Key
-				</Text>
-				<GrKey size={16} />
-			</Stack>
+			<GradientText>
+				<Stack
+					direction="row"
+					alignItems="center"
+					justifyContent="space-between"
+					spacing="2"
+					mb={3}
+				>
+					<Text fontSize="xl" fontWeight={600}>
+            Public Key
+					</Text>
+					<GrKey size={16} />
+				</Stack>
+			</GradientText>
 
 			<InputGroup>
 				<Input readOnly pr="4.5rem" value={publicKey} placeholder="Public Key" />
@@ -36,12 +45,21 @@ const AccountData = ({ publicKey, account }) => {
 				</InputRightElement>
 			</InputGroup>
 
-			<Stack direction="row" alignItems="center" spacing="2" mt={6} mb={3}>
-				<Text fontSize="xl" fontWeight={600}>
-          Account Balance
-				</Text>
-				<BsWallet2 size={16} />
-			</Stack>
+			<GradientText>
+				<Stack
+					direction="row"
+					alignItems="center"
+					justifyContent="space-between"
+					spacing="2"
+					mt={6}
+					mb={3}
+				>
+					<Text fontSize="xl" fontWeight={600}>
+            Account Balance
+					</Text>
+					<BsWallet2 size={16} />
+				</Stack>
+			</GradientText>
 
 			{account ? (
 				<>

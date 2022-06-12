@@ -17,6 +17,7 @@ import {
 import { GrSend } from 'react-icons/gr'
 
 import sendTransaction from '../utils/sendTransaction'
+import GradientText from './common/GradientText'
 
 const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 	const toast = useToast()
@@ -68,12 +69,14 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 
 	return (
 		<>
-			<Stack direction="row" alignItems="center" spacing="2" mt={6}>
-				<Text fontSize="xl" fontWeight={600}>
+			<GradientText>
+				<Stack direction="row" alignItems="center" spacing="2" mt={6} justifyContent="space-between">
+					<Text fontSize="xl" fontWeight={600}>
           Send XLM
-				</Text>
-				<GrSend size={18} />
-			</Stack>
+					</Text>
+					<GrSend size={18} />
+				</Stack>
+			</GradientText>
 
 			<NumberInput
 				step="0.001"

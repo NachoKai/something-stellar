@@ -4,6 +4,7 @@ import { AiOutlineKey } from 'react-icons/ai'
 
 import loadAccount from '../utils/loadAccount'
 import AccountBalance from './AccountBalance'
+import GradientText from './common/GradientText'
 
 const BalanceChecker = () => {
 	const toast = useToast()
@@ -26,12 +27,21 @@ const BalanceChecker = () => {
 
 	return (
 		<>
-			<Stack direction="row" alignItems="center" spacing="2" mt={8}>
-				<Text fontSize="xl" fontWeight={600}>
-          Balance Checker
-				</Text>
-				<AiOutlineKey size={20} />
-			</Stack>
+			<GradientText>
+				<Stack
+					direction="row"
+					alignItems="center"
+					spacing="2"
+					mt={8}
+					justifyContent="space-between"
+				>
+					<Text fontSize="xl" fontWeight={600}>
+            Balance Checker
+					</Text>
+					<AiOutlineKey size={20} />
+				</Stack>
+			</GradientText>
+
 			<InputGroup mt={6}>
 				<Input
 					onChange={({ target: { value } }) => setAccountToCheck(value)}
