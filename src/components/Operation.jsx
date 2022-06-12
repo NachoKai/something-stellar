@@ -44,20 +44,12 @@ const Operation = ({ operation, index }) => {
 			</Stack>
 
 			{operation?.account ? (
-				<Text fontSize="sm" maxWidth="95%" overflow="hidden" textOverflow="ellipsis">
-					<b>Account:</b> {operation.account}
-				</Text>
+				<SectionText title="Account:" value={operation.account} />
 			) : null}
 			{operation?.source_account ? (
-				<Text fontSize="sm" maxWidth="95%" overflow="hidden" textOverflow="ellipsis">
-					<b>Source:</b> {operation.source_account}
-				</Text>
+				<SectionText title="Source:" value={operation.source_account} />
 			) : null}
-			{operation?.to ? (
-				<Text fontSize="sm" maxWidth="95%" overflow="hidden" textOverflow="ellipsis">
-					<b>To:</b> {operation.to}
-				</Text>
-			) : null}
+			{operation?.to ? <SectionText title="To:" value={operation.to} /> : null}
 
 			<Stack alignItems="center" direction="row" justifyContent="space-between" mt={2}>
 				<Stack alignItems="center" direction="row" spacing={1}>
@@ -76,9 +68,33 @@ const Operation = ({ operation, index }) => {
 	)
 }
 
+const SectionText = ({ title, value }) => {
+	return (
+		<Stack direction="row">
+			<Text fontSize="sm" fontWeight="500">
+				{title}
+			</Text>
+			<Text
+				color="grey"
+				fontSize="sm"
+				maxWidth="95%"
+				overflow="hidden"
+				textOverflow="ellipsis"
+			>
+				{value}
+			</Text>
+		</Stack>
+	)
+}
+
 export default Operation
 
 Operation.propTypes = {
 	operation: PropTypes.object,
 	index: PropTypes.number,
+}
+
+SectionText.propTypes = {
+	title: PropTypes.string,
+	value: PropTypes.string,
 }
