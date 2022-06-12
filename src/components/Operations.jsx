@@ -4,12 +4,17 @@ import PropTypes from 'prop-types'
 import Operation from './Operation'
 
 const Operations = ({ operations }) => {
-	console.log('operations',operations?.records)
 	return (
 		<>
-			{operations?.records?.map((operation, index) => {
-				return <Operation operation={operation} index={index} key={index} />
-			})}
+			{operations?.records
+				?.sort((a, b) => {
+					const dateA = new Date(a.created_at)
+					const dateB = new Date(b.created_at)
+					return dateB - dateA
+				})
+				.map((operation, index) => {
+					return <Operation operation={operation} index={index} key={index} />
+				})}
 		</>
 	)
 }

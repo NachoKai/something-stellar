@@ -100,7 +100,7 @@ const Info = ({ operations }) => {
 									<b>Network:</b> {data?.network_passphrase}
 								</Text>
 
-								<Text fontSize="xl" fontWeight={600}>
+								<Text fontSize="md" fontWeight={600}>
                   Fee Stats
 								</Text>
 								<Text>
