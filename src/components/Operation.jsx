@@ -12,7 +12,6 @@ const Operation = ({ operation, index }) => {
 			borderColor="lightgrey"
 			borderRadius="8px"
 			borderWidth="1px"
-			boxShadow="0 10px 15px -3px white,0 4px 6px -4px grey;"
 			my={3}
 			p={4}
 		>

@@ -7,8 +7,8 @@ const Wrapper = styled(Stack)`
   max-width: 48rem;
   flex-direction: column;
   position: relative;
-  color: #000;
-  background: #fff;
+  color: ${p => (p.colorMode === 'dark' ? '#F7FAFC' : '#171923')};
+  background: ${p => (p.colorMode === 'dark' ? '#171923' : '#F7FAFC')};
   background-clip: padding-box;
   border: solid 5px transparent;
   border-radius: 1em;
