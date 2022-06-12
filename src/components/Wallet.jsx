@@ -57,14 +57,16 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 					<ModalHeader>Are you sure you want to close your account?</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody>
-            Your account data will be removed from your browser, so if you haven&apos;t saved
-            your secret key, you will have lost it forever.
+            Your account data will be removed from your browser, so if you haven&apos;t
+            saved your secret key, you will have lost it forever.
 					</ModalBody>
 					<ModalFooter>
 						<Button variantColor="red" mr={3} onClick={resetAccount}>
               Yes
 						</Button>
-						<Button variantColor="gray" onClick={onClose}>No</Button>
+						<Button variantColor="gray" onClick={onClose}>
+              No
+						</Button>
 					</ModalFooter>
 				</ModalContent>
 			</Modal>

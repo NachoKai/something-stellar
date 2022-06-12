@@ -29,21 +29,31 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 	}
 
 	const importAccount = () => {
-		// All secret keys are 56 characters long
-		if (secretToImport.length === 56) {
-			const sourceKeys = StellarSdk.Keypair.fromSecret(secretToImport)
+		try {
+			// All secret keys are 56 characters long
+			if (secretToImport.length === 56) {
+				const sourceKeys = StellarSdk.Keypair.fromSecret(secretToImport)
 
-			localStorage.setItem('secret', secretToImport)
-			localStorage.setItem('publicKey', sourceKeys?.publicKey())
-			localStorage.setItem('keyCopied', true)
+				localStorage.setItem('secret', secretToImport)
+				localStorage.setItem('publicKey', sourceKeys?.publicKey())
+				localStorage.setItem('keyCopied', true)
 
-			setPublicKey(sourceKeys?.publicKey())
-			setSecret(secretToImport)
-			setKeyCopied(true)
-		} else {
+				setPublicKey(sourceKeys?.publicKey())
+				setSecret(secretToImport)
+				setKeyCopied(true)
+			} else {
+				toast({
+					title: 'Error',
+					description: 'Make sure your secret key is correct',
+					status: 'error',
+					duration: 5000,
+					isClosable: true,
+				})
+			}
+		} catch (err) {
 			toast({
-				title: 'Error',
-				description: 'Make sure your secret key is correct',
+				title: 'An error has occurred',
+				description: err.message,
 				status: 'error',
 				duration: 5000,
 				isClosable: true,
@@ -53,7 +63,9 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 
 	return (
 		<Stack width="100%" maxWidth="48rem" justifyContent="center">
-			<Heading>Welcome to your <GradientText>Stellar Wallet</GradientText></Heading>
+			<Heading>
+        Welcome to your <GradientText>Stellar Wallet</GradientText>
+			</Heading>
 			<Text fontSize="xl">Create your stellar account quickly and easily</Text>
 			<Button onClick={handleCreateAccount} size="lg" variantColor="blue" mt="24px">
         Create Account
@@ -87,7 +99,7 @@ WelcomeView.propTypes = {
 }
 
 const GradientText = styled.span`
-  background: linear-gradient(to right, #63B3ED, #2B6CB0);
+  background: linear-gradient(to right, #63b3ed, #2b6cb0);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
