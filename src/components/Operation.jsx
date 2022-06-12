@@ -16,7 +16,7 @@ const Operation = ({ operation, index }) => {
 			my={3}
 			p={4}
 		>
-			<Stack align="center" direction="row" justify="space-between" mb={2}>
+			<Stack align="center" direction="row" justify="space-between" mb={3}>
 				<Stack align="center" direction="row" spacing={1}>
 					<Text color="green.600" fontSize="xl">
 						{operation?.amount ? <b>{Number(operation.amount).toFixed(2)}</b> : null}

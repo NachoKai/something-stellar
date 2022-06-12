@@ -36,6 +36,7 @@ const BalanceChecker = () => {
 					<AiOutlineKey size={20} />
 				</Stack>
 			</GradientText>
+
 			<InputGroup mt={6}>
 				<Input
 					isInvalid={accountToCheck.length !== 56 && accountToCheck.length > 0}
@@ -48,8 +49,9 @@ const BalanceChecker = () => {
           Check
 				</Button>
 			</InputGroup>
+
 			{checkedAccount?.balances?.map((balance, index) => (
-				<AccountBalance key={index} balance={balance} index={index} />
+				<AccountBalance key={index} balance={balance} />
 			))}
 		</>
 	)

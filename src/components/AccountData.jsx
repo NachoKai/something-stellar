@@ -40,7 +40,7 @@ const AccountData = ({ publicKey, account }) => {
 				</InputRightElement>
 			</InputGroup>
 
-			<Divider />
+			<Divider py={2} />
 
 			<GradientText>
 				<Stack
@@ -68,7 +68,7 @@ const AccountData = ({ publicKey, account }) => {
 					) : null}
 
 					{account.balances?.map((balance, index) => (
-						<AccountBalance key={index} balance={balance} index={index} />
+						<AccountBalance key={index} balance={balance} />
 					))}
 				</>
 			) : (

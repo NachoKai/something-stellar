@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, ChakraProvider, CSSReset, Image } from '@chakra-ui/react'
+import { Box, ChakraProvider, Image } from '@chakra-ui/react'
 
 import SaturnSVG from './assets/saturn.svg'
 import Main from './components/Main'
@@ -7,7 +7,6 @@ import Main from './components/Main'
 function App() {
 	return (
 		<ChakraProvider>
-			<CSSReset />
 			<Box
 				alignItems="center"
 				display="flex"

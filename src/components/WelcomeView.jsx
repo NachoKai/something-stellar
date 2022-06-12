@@ -59,7 +59,7 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 	}
 
 	return (
-		<Stack justify="center" maxW="48rem" w="100%">
+		<Stack justify="center" maxW="48rem" spacing={2} w="100%">
 			<Heading>
         Welcome to your <GradientText>Stellar Wallet</GradientText>
 			</Heading>
@@ -67,14 +67,14 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 			<Button
 				boxShadow="0 10px 15px -3px skyblue,0 4px 6px -4px blue;"
 				colorScheme="blue"
-				mt="24px"
+				my={6}
 				size="lg"
 				onClick={handleCreateAccount}
 			>
         Create Account
 			</Button>
 
-			<Divider p={4} />
+			<Divider py={2} />
 
 			<Text mt={8}>Or import an account with your secret key:</Text>
 			<InputGroup>

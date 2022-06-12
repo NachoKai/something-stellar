@@ -76,9 +76,9 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 			<Box display="flex" justifyContent="center" p={8} w="100%">
 				<Stack justify="center" w="100%">
 					<AccountData account={account} publicKey={publicKey} />
-					<Divider />
+					<Divider py={2} />
 					<BalanceChecker />
-					<Divider />
+					<Divider py={2} />
 					<SendTransaction
 						secret={secret}
 						updateAccount={updateAccount}
