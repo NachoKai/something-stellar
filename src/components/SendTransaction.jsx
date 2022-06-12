@@ -84,7 +84,7 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 
 			<NumberInput
 				mt={6}
-				step="0.001"
+				step={0.001}
 				value={amount}
 				onChange={value => setAmount(value)}
 			>
