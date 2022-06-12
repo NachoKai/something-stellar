@@ -81,7 +81,7 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 				<Input
 					isInvalid={secretToImport.length !== 56 && secretToImport.length > 0}
 					mr={2}
-					placeholder="Account to check"
+					placeholder="Account to import"
 					value={secretToImport}
 					onChange={({ target: { value } }) => setSecretToImport(value)}
 				/>
