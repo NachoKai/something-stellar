@@ -78,7 +78,8 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 					value={secretToImport}
 					placeholder="Account to check"
 					roundRight="0"
-					mx={2}
+					mr={2}
+					isInvalid={secretToImport.length !== 56 && secretToImport.length > 0}
 				/>
 				<Button onClick={importAccount} variantColor="green">
           Import

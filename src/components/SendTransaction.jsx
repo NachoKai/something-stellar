@@ -94,6 +94,7 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 					value={destination}
 					placeholder="Recipient"
 					roundRight="0"
+					isInvalid={destination.length !== 56 && destination.length > 0}
 				/>
 			</InputGroup>
 			<Button mt={6} onClick={sendXLM} variantColor="blue">

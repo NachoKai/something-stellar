@@ -39,6 +39,7 @@ const BalanceChecker = () => {
 					placeholder="Account to check"
 					roundRight="0"
 					mr={2}
+					isInvalid={accountToCheck.length !== 56 && accountToCheck.length > 0}
 				/>
 				<Button onClick={checkBalance} variantColor="green">
           Check
