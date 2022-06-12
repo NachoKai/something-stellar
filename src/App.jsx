@@ -14,6 +14,7 @@ function App() {
 				justifyContent="center"
 				flexDirection="column"
 				p={2}
+				mt={4}
 			>
 				<Image src={SaturnSVG} size="10vw" objectFit="cover" alt="Saturn" mb={8} />
 				<Main />
