@@ -16,7 +16,7 @@ import {
 
 import sendTransaction from '../utils/sendTransaction'
 
-const SendTransaction = ({ secret, updateAccount }) => {
+const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 	const toast = useToast()
 	const [destination, setDestination] = useState('')
 	const [amount, setAmount] = useState()
@@ -46,6 +46,7 @@ const SendTransaction = ({ secret, updateAccount }) => {
 				})
 
 				updateAccount()
+				updateOperations()
 			} catch (err) {
 				toast({
 					title: 'An error has occurred',
@@ -104,4 +105,5 @@ export default SendTransaction
 SendTransaction.propTypes = {
 	secret: PropTypes.string,
 	updateAccount: PropTypes.func,
+	updateOperations: PropTypes.func,
 }

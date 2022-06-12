@@ -6,6 +6,7 @@ import {
 	InputRightAddon,
 	Tooltip,
 } from '@chakra-ui/core'
+import { startCase } from 'lodash'
 import PropTypes from 'prop-types'
 
 const AccountBalance = ({ balance, index }) => {
@@ -16,7 +17,7 @@ const AccountBalance = ({ balance, index }) => {
 			<InputRightAddon>XLM</InputRightAddon>
 			<InputRightAddon>
 				<Tooltip placement="top" label="Asset Type">
-					{balance?.asset_type}
+					{startCase(balance?.asset_type)}
 				</Tooltip>
 			</InputRightAddon>
 		</InputGroup>

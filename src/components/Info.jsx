@@ -14,7 +14,7 @@ import PropTypes from 'prop-types'
 
 import Operations from './Operations'
 
-const Info = ({ publicKey }) => {
+const Info = ({ operations }) => {
 	const [data, setData] = useState(null)
 	const [feeStats, setFeeStats] = useState(null)
 	const [loading, setLoading] = useState(true)
@@ -80,7 +80,7 @@ const Info = ({ publicKey }) => {
 								<AccordionIcon />
 							</AccordionHeader>
 							<AccordionPanel pb={4}>
-								<Operations publicKey={publicKey} />
+								<Operations operations={operations} />
 							</AccordionPanel>
 						</AccordionItem>
 
@@ -167,5 +167,5 @@ const Info = ({ publicKey }) => {
 export default Info
 
 Info.propTypes = {
-	publicKey: PropTypes.string,
+	operations: PropTypes.object,
 }

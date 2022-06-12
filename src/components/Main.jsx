@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import WelcomeView from './WelcomeView'
 import CopyView from './CopyView'
 import Wallet from './Wallet'
-import Info from './Info'
 
 const Main = () => {
 	const [secret, setSecret] = useState(localStorage.secret)
@@ -38,12 +37,7 @@ const Main = () => {
 		)
 	}
 
-	return (
-		<>
-			<Wallet publicKey={publicKey} secret={secret} resetAccount={resetAccount} />
-			<Info publicKey={publicKey} />
-		</>
-	)
+	return <Wallet publicKey={publicKey} secret={secret} resetAccount={resetAccount} />
 }
 
 export default Main

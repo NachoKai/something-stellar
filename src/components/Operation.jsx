@@ -1,6 +1,8 @@
 import React from 'react'
-import { Text, Box, Flex, Badge } from '@chakra-ui/core'
-import { formatDistance } from 'date-fns'
+import { Text, Box, Badge, Stack, Tooltip } from '@chakra-ui/core'
+import { format, isValid, formatDistance } from 'date-fns'
+import { startCase } from 'lodash'
+import { MdSend } from 'react-icons/md'
 import PropTypes from 'prop-types'
 
 const Operation = ({ operation, index }) => {
@@ -13,17 +15,26 @@ const Operation = ({ operation, index }) => {
 			borderRadius="8px"
 			my={2}
 		>
-			<Flex justifyContent="space-between" alignItems="center" mb={2}>
+			<Stack direction="row" justifyContent="space-between" alignItems="center" mb={2}>
 				<Text fontSize="sm">
 					<b>{index}</b>
 				</Text>
 				<Text fontSize="sm">
-					{formatDistance(
-						new Date(),
-						operation?.created_at ? new Date(operation.created_at) : new Date()
-					) + ' ago'}
+					{operation?.created_at ? (
+						<Tooltip
+							label={format(
+								isValid(new Date(operation.created_at))
+									? new Date(operation.created_at)
+									: new Date(),
+								'dd MMM yyyy - HH:mm'
+							)}
+							placement="top"
+						>
+							{formatDistance(new Date(), new Date(operation.created_at)) + ' ago'}
+						</Tooltip>
+					) : null}
 				</Text>
-			</Flex>
+			</Stack>
 
 			{operation?.account ? (
 				<Text fontSize="sm">
@@ -35,24 +46,22 @@ const Operation = ({ operation, index }) => {
 					<b>Source:</b> {operation.source_account}
 				</Text>
 			) : null}
-			{operation?.funder ? (
-				<Text fontSize="sm">
-					<b>Funder:</b> {operation.funder}
-				</Text>
-			) : null}
 
-			<Flex justifyContent="space-between" alignItems="center" mt={2}>
+			<Stack direction="row" justifyContent="space-between" alignItems="center" mt={2}>
 				{operation?.type ? (
-					<Text fontSize="sm">
-						<b>Type:</b> {operation.type}
-					</Text>
+					<Stack direction="row" alignItems="center">
+						<MdSend />
+						<Text fontSize="sm" ml={1}>
+							<b>{startCase(operation.type)}</b>
+						</Text>
+					</Stack>
 				) : null}
 				{operation?.transaction_successful ? (
 					<Badge variantColor="green">Successful</Badge>
 				) : (
 					<Badge variantColor="red">Not Successful</Badge>
 				)}
-			</Flex>
+			</Stack>
 		</Box>
 	)
 }

@@ -1,23 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-import getOperations from '../utils/getOperations'
 import Operation from './Operation'
 
-const Operations = ({ publicKey }) => {
-	const [operations, setOperations] = useState(undefined)
-
-	const updateOperations = () => {
-		const getData = async () => {
-			const operations = await getOperations(publicKey)
-			setOperations(operations)
-		}
-
-		getData()
-	}
-
-	useEffect(updateOperations, [publicKey])
-
+const Operations = ({ operations }) => {
 	return (
 		<>
 			{operations?.records?.map((operation, index) => {
@@ -30,5 +16,5 @@ const Operations = ({ publicKey }) => {
 export default Operations
 
 Operations.propTypes = {
-	publicKey: PropTypes.string,
+	operations: PropTypes.object,
 }
