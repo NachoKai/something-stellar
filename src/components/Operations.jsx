@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Operation from './Operation'
 
 const Operations = ({ operations }) => {
+	console.log('operations',operations?.records)
 	return (
 		<>
 			{operations?.records?.map((operation, index) => {

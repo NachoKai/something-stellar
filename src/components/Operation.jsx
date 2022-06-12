@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Box, Badge, Stack, Tooltip, Divider } from '@chakra-ui/core'
+import { Text, Box, Badge, Stack, Tooltip } from '@chakra-ui/core'
 import { format, isValid, formatDistance } from 'date-fns'
 import { startCase } from 'lodash'
 import { MdSend } from 'react-icons/md'
@@ -11,6 +11,9 @@ const Operation = ({ operation, index }) => {
 			key={index}
 			p={4}
 			my={3}
+			borderWidth="1px"
+			borderColor="lightgrey"
+			borderRadius="8px"
 		>
 			<Stack direction="row" justifyContent="space-between" alignItems="center" mb={2}>
 				<Stack direction="row" alignItems="center" spacing={1}>
@@ -68,7 +71,6 @@ const Operation = ({ operation, index }) => {
 					<Badge variantColor="red">Not Successful</Badge>
 				)}
 			</Stack>
-			<Divider mt={6} borderWidth="1px" borderColor="grey" />
 		</Box>
 	)
 }

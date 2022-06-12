@@ -69,7 +69,7 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
         Create Account
 			</Button>
 
-			<Divider my={8} borderWidth="1px" borderColor="grey" />
+			<Divider my={8} borderWidth="1px" borderColor="lightgrey" />
 
 			<Text mt={8}>Or import an account with your secret key:</Text>
 			<InputGroup>
