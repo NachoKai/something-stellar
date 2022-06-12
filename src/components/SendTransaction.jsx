@@ -36,7 +36,7 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 				const result = await sendTransaction(secret, destination, amount.toString())
 
 				toast({
-					title: `${amount} XLM have been sent`,
+					title: `${amount} XLM have been sent!`,
 					description: `Transaction hash: ${result?.hash}`,
 					status: 'success',
 					isClosable: true,
