@@ -14,6 +14,7 @@ const Operation = ({ operation, index }) => {
 			borderWidth="1px"
 			borderColor="lightgrey"
 			borderRadius="8px"
+			boxShadow="0 10px 15px -3px white,0 4px 6px -4px grey;"
 		>
 			<Stack direction="row" justifyContent="space-between" alignItems="center" mb={2}>
 				<Stack direction="row" alignItems="center" spacing={1}>

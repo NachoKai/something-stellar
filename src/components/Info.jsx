@@ -23,7 +23,13 @@ const Info = ({ operations }) => {
 					<AccordionItem>
 						<AccordionHeader justifyContent="space-between">
 							<GradientText>
-								<Stack direction="row" alignItems="center" spacing="2">
+								<Stack
+									direction="row"
+									alignItems="center"
+									spacing="2"
+									width="100%"
+									justifyContent="space-between"
+								>
 									<Text fontSize="md" fontWeight={600}>
                     Operations
 									</Text>

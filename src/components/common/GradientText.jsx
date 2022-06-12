@@ -9,6 +9,7 @@ const GradientText = styled.span`
   -moz-text-fill-color: transparent;
   -o-background-clip: text;
   -o-text-fill-color: transparent;
+  width: 100%;
 `
 
 export default GradientText
