@@ -83,6 +83,8 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 			</GradientText>
 
 			<NumberInput
+				max={922337203685}
+				min={0.0000001}
 				mt={6}
 				step={0.001}
 				value={amount}
