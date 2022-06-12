@@ -24,11 +24,11 @@ const AccountData = ({ publicKey, account }) => {
 				<Text fontSize="xl" fontWeight={600}>
           Public Key
 				</Text>
-				<GrKey size={16}/>
+				<GrKey size={16} />
 			</Stack>
 
 			<InputGroup>
-				<Input readOnly pr="4.5rem" value={publicKey} />
+				<Input readOnly pr="4.5rem" value={publicKey} placeholder="Public Key" />
 				<InputRightElement width="4.5rem">
 					<Button h="1.75rem" size="sm" onClick={onCopy}>
 						{hasCopied ? 'Copied' : 'Copy'}
