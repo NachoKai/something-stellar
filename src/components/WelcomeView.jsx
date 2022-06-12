@@ -14,6 +14,7 @@ import {
 
 import createAccount from '../utils/createAccount'
 import GradientText from './common/GradientText'
+import { openConnectWindow } from '../utils/simpleSigner'
 
 const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 	const toast = useToast()
@@ -73,6 +74,9 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 			>
         Create Account
 			</Button>
+			<Button onClick={openConnectWindow}>Connect</Button>
+			{/* <Button onClick={openSignWindowUsingUrlParams}>Open sign via URL</Button> */}
+			{/* <Button onClick={openSignWindowUsingPostMessage}>Open sign via postMessage</Button> */}
 
 			<Divider py={2} />
 

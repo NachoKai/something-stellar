@@ -4,7 +4,7 @@ import WelcomeView from './WelcomeView'
 import CopyView from './CopyView'
 import Wallet from './Wallet'
 
-const Main = ({ colorMode }) => {
+const Main = ({ colormode }) => {
 	const [secret, setSecret] = useState(localStorage.secret)
 	const [publicKey, setPublicKey] = useState(localStorage.publicKey)
 	const [isKeyCopied, setKeyCopied] = useState(localStorage.keyCopied)
@@ -29,7 +29,7 @@ const Main = ({ colorMode }) => {
 	} else if (!isKeyCopied) {
 		return (
 			<CopyView
-				colorMode={colorMode}
+				colormode={colormode}
 				publicKey={publicKey}
 				resetAccount={resetAccount}
 				secret={secret}
@@ -40,7 +40,7 @@ const Main = ({ colorMode }) => {
 
 	return (
 		<Wallet
-			colorMode={colorMode}
+			colormode={colormode}
 			publicKey={publicKey}
 			resetAccount={resetAccount}
 			secret={secret}

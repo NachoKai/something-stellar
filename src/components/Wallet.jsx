@@ -23,7 +23,7 @@ import getOperations from '../utils/getOperations'
 import Info from './Info'
 import Wrapper from './common/Wrapper'
 
-const Wallet = ({ publicKey, secret, resetAccount, colorMode }) => {
+const Wallet = ({ publicKey, secret, resetAccount, colormode }) => {
 	const [account, setAccount] = useState(undefined)
 	const [operations, setOperations] = useState(undefined)
 	const { isOpen, onOpen, onClose } = useDisclosure()
@@ -52,7 +52,7 @@ const Wallet = ({ publicKey, secret, resetAccount, colorMode }) => {
 	useEffect(updateOperations, [publicKey])
 
 	return (
-		<Wrapper colorMode={colorMode}>
+		<Wrapper colormode={colormode}>
 			<Modal isOpen={isOpen} onClose={onClose}>
 				<ModalOverlay />
 				<ModalContent>

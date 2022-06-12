@@ -17,7 +17,7 @@ import PropTypes from 'prop-types'
 import activeAccount from '../utils/activeAccount'
 import Wrapper from './common/Wrapper'
 
-const CopyView = ({ publicKey, secret, setKeyCopied, resetAccount, colorMode }) => {
+const CopyView = ({ publicKey, secret, setKeyCopied, resetAccount, colormode }) => {
 	const toast = useToast()
 	const { onCopy, hasCopied } = useClipboard(secret)
 
@@ -43,7 +43,7 @@ const CopyView = ({ publicKey, secret, setKeyCopied, resetAccount, colorMode }) 
 	}
 
 	return (
-		<Wrapper colorMode={colorMode}>
+		<Wrapper colormode={colormode}>
 			<Box p={8}>
 				<Stack justify="center">
 					<Alert status="warning">

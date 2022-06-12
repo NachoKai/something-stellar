@@ -26,7 +26,7 @@ function App() {
 				src={SaturnSVG}
 				onClick={toggleColorMode}
 			/>
-			<Main colorMode={colorMode} />
+			<Main colormode={colorMode} />
 		</Box>
 	)
 }
