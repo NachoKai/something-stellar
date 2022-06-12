@@ -30,7 +30,6 @@ const WelcomeView = ({ setPublicKey, setSecret, setKeyCopied }) => {
 
 	const importAccount = () => {
 		try {
-			// All secret keys are 56 characters long
 			if (secretToImport.length === 56) {
 				const sourceKeys = StellarSdk.Keypair.fromSecret(secretToImport)
 

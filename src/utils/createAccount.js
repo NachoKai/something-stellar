@@ -1,7 +1,6 @@
 import StellarSdk from 'stellar-sdk'
 
-// Keypair represents public and secret keys of the account
-const randomPair = StellarSdk.Keypair.random() // Create a random Keypair object
+const randomPair = StellarSdk.Keypair.random()
 
 const createAccount = () => {
 	const secret = randomPair.secret()

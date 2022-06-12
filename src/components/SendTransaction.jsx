@@ -25,7 +25,6 @@ const SendTransaction = ({ secret, updateAccount, updateOperations }) => {
 	const [amount, setAmount] = useState()
 
 	const sendXLM = async () => {
-		// All secret keys are 56 characters long
 		if (destination.length === 56 && amount > 0) {
 			try {
 				toast({
