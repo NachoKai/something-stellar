@@ -9,10 +9,12 @@ describe('SendTransaction', () => {
 		const input = screen.getByRole('spinbutton')
 		const sendButton = screen.getByRole('button', { name: /send/i })
 		const recipientInput = screen.getByPlaceholderText('Recipient')
+		const amountInput = screen.getByPlaceholderText('0.000')
 
 		expect(sendXlmTitle).toBeInTheDocument()
 		expect(input).toBeInTheDocument()
 		expect(sendButton).toBeInTheDocument()
 		expect(recipientInput).toBeInTheDocument()
+		expect(amountInput).toBeInTheDocument()
 	})
 })
