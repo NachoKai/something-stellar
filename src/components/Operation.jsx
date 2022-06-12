@@ -13,12 +13,18 @@ const Operation = ({ operation, index }) => {
 			borderColor="black"
 			borderWidth="1px"
 			borderRadius="8px"
-			my={2}
+			my={3}
 		>
 			<Stack direction="row" justifyContent="space-between" alignItems="center" mb={2}>
-				<Text fontSize="sm">
-					<b>{index}</b>
-				</Text>
+				<Stack direction="row" alignItems="center" spacing={1}>
+					<Text fontSize="xl" color="green.600">
+						{operation?.amount ? <b>{Number(operation.amount).toFixed(2)}</b> : null}
+					</Text>
+					<Text fontSize="md" color="green.600">
+						<b>{startCase(operation.asset_type)}</b>
+					</Text>
+				</Stack>
+
 				<Text fontSize="sm">
 					{operation?.created_at ? (
 						<Tooltip
@@ -37,25 +43,28 @@ const Operation = ({ operation, index }) => {
 			</Stack>
 
 			{operation?.account ? (
-				<Text fontSize="sm">
+				<Text fontSize="sm" maxWidth="95%" overflow="hidden" textOverflow="ellipsis">
 					<b>Account:</b> {operation.account}
 				</Text>
 			) : null}
 			{operation?.source_account ? (
-				<Text fontSize="sm">
+				<Text fontSize="sm" maxWidth="95%" overflow="hidden" textOverflow="ellipsis">
 					<b>Source:</b> {operation.source_account}
+				</Text>
+			) : null}
+			{operation?.to ? (
+				<Text fontSize="sm" maxWidth="95%" overflow="hidden" textOverflow="ellipsis">
+					<b>To:</b> {operation.to}
 				</Text>
 			) : null}
 
 			<Stack direction="row" justifyContent="space-between" alignItems="center" mt={2}>
-				{operation?.type ? (
-					<Stack direction="row" alignItems="center">
-						<MdSend />
-						<Text fontSize="sm" ml={1}>
-							<b>{startCase(operation.type)}</b>
-						</Text>
-					</Stack>
-				) : null}
+				<Stack direction="row" alignItems="center" spacing={1}>
+					<MdSend />
+					<Text fontSize="sm" ml={1}>
+						<b>{startCase(operation.type)}</b>
+					</Text>
+				</Stack>
 				{operation?.transaction_successful ? (
 					<Badge variantColor="green">Successful</Badge>
 				) : (

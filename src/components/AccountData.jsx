@@ -7,7 +7,9 @@ import {
 	Text,
 	useClipboard,
 } from '@chakra-ui/core'
+import { formatDistance } from 'date-fns'
 import PropTypes from 'prop-types'
+
 import AccountBalance from './AccountBalance'
 
 const AccountData = ({ publicKey, account }) => {
@@ -32,7 +34,13 @@ const AccountData = ({ publicKey, account }) => {
 			</Text>
 			{account ? (
 				<>
-					<Text fontSize="sm">Last modified time: {account?.last_modified_time}</Text>
+					{account?.last_modified_time ? (
+						<Text fontSize="sm">
+              Last modified time:{' '}
+							{formatDistance(new Date(), new Date(account.last_modified_time)) + ' ago'}
+						</Text>
+					) : null}
+
 					{account.balances?.map((balance, index) => (
 						<AccountBalance balance={balance} index={index} key={index} />
 					))}

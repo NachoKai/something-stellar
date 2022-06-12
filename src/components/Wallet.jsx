@@ -50,13 +50,17 @@ const Wallet = ({ publicKey, secret, resetAccount }) => {
 				<Stack width="100%" maxWidth="48rem" justifyContent="center">
 					<AccountData account={account} publicKey={publicKey} />
 					<Divider my={8} borderWidth="2px" borderColor="black" />
-					<SendTransaction secret={secret} updateAccount={updateAccount} updateOperations={updateOperations} />
+					<SendTransaction
+						secret={secret}
+						updateAccount={updateAccount}
+						updateOperations={updateOperations}
+					/>
 					<Divider my={8} borderWidth="2px" borderColor="black" />
 					<BalanceChecker />
 					<Divider my={8} borderWidth="2px" borderColor="black" />
 
 					<Box display="flex" justifyContent="space-between" alignItems="center" mt={6}>
-						<Text fontSize="sm" maxWidth="50%" overflow="hidden" textOverflow="ellipsis">
+						<Text fontSize="sm" maxWidth="60%" overflow="hidden" textOverflow="ellipsis">
 							{publicKey}
 						</Text>
 						<Button onClick={resetAccount} variant="outline" variantColor="red">
